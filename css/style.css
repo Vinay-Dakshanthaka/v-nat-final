@@ -7,6 +7,12 @@
 	--dark: #091e3e;
 	--footer:#343a40;
 }
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow-x:hidden ;
+}
 #logoimage {
 	padding: 5px;
 	margin: auto;
