@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+	<meta charset="utf-8">
+	<title>Admin Activities</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Free HTML Templates" name="keywords">
+	<meta content="Free HTML Templates" name="description">
+
+	<!-- Favicon -->
+	  <link rel="icon" href="favicon (1).ico" />
+
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Icon Font Stylesheet -->
+	<link href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+	<link href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+	<!-- Libraries Stylesheet -->
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="lib/animate/animate.min.css" rel="stylesheet">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+	 <style>
+		  .navbar {
+		background: linear-gradient(to bottom, #FE77A6 80%, #41b2db 20%) !important;
+	}
+      .navbar-brand {
+        text-align: center;
+      }
+
+      #footerlogoimage {
+        padding: 5px;
+        margin: auto;
+        height: 250px;
+        width: 250px;
+      }
+
+      /* Media Query for Mobile Devices */
+      @media only screen and (max-width: 767px) {
+        #footerlogoimage {
+          height: 120px;
+          width: 120px;
+        }
+      }
+    </style>
+
+	
+
+	<style>
+		#message {
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			color: #ff5733;
+			/* Change the color to your preference */
+			margin-top: 20px;
+			/* Add spacing from the elements above */
+		}
+
+		/* Style the row and center its content */
+		.row {
+			display: flex;
+			justify-content: center;
+			/* align-items: center; */
+		}
+
+		/* Style the form container */
+		.mb-4 {
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Style the form label */
+		.form-label {
+			font-weight: bold;
+			color: black;
+		}
+
+		/* Style the file input */
+		.form-control[type="file"] {
+			padding: 10px;
+			background: none;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 100%;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		}
+
+		/* Style the message div */
+		#message {
+			margin-top: 10px;
+			color: #007bff;
+			/* Change the color to your preference */
+			font-weight: bold;
+		}
+
+		/* Style the upload button */
+		#uploadBtn {
+			margin-top: 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		/* Hover effect for the upload button */
+		#uploadBtn:hover {
+			background-color: #0056b3;
+			/* Darker shade of the primary color */
+		}
+
+		/* Style the upload button when disabled */
+		#uploadBtn:disabled {
+			background-color: #ccc;
+			cursor: not-allowed;
+		}
+
+		.section-heading {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			color: white;
+			/* Choose an appropriate text color */
+			text-align: center;
+			/* Center align the heading */
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<div id="spinner"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner"></div>
+	</div>
+	<!-- Spinner End -->
+
+
+	<!-- Topbar Start -->
+	<!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York,
+                        USA</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="#"><i
+                            class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+	<!-- Topbar End -->
+
+
+
+	<!-- Navbar Start -->
+	<div class="container-fluid position-relative p-0 ">
+		<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+			<a href="index.html" class="navbar-brand p-0" >
+				<img id="logoimage" alt="logo" />
+				<!-- <h1 class="m-0">TOT FD</h1> -->
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				<span class="fa fa-bars"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto py-0">
+					<a href="./index.html" class="nav-item nav-link">Home</a>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" id="aboutDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							About Us
+						</a>
+						<div></div>
+						<ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+							<li>
+								<a class="dropdown-item" href="./about.html">About</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="./histry.html">History</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="./mission.html">Mission</a>
+							</li>
+						</ul>
+					</li>
+					<a href="./service.html" class="nav-item nav-link" id="services" style="display: none">Our
+						Services</a>
+					<a href="./clients.html" class="nav-item nav-link" id="clients" style="display: none">Clients</a>
+					<a href="./founders.html" class="nav-item nav-link" id="founders" style="display: none">Founders</a>
+					<a href="./payments.html" class="nav-item nav-link" id="payments" style="display: none">Payments</a>
+					<a href="./products.html" class="nav-item nav-link" id="products" style="display: none">Our
+						Products</a>
+					<a href="./contact.html" class="nav-item nav-link">Contact Us</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" id="more" data-bs-toggle="dropdown"
+							style="display: none">More</a>
+						<div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0">
+							<a href="./gallery.html" class="dropdown-item" id="gallery"
+								style="display: none">Gallery</a>
+							<!-- <a href="team.html" class="dropdown-item">Images</a> -->
+							<a href="./reviews.html" class="dropdown-item" id="reviews"
+								style="display: none">Reviews</a>
+							<a href="./careers.html" class="dropdown-item" id="careers"
+								style="display: none">Careers</a>
+							<!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+						</div>
+					</div>
+					<a href="./login.html" class="nav-item nav-link" id="login">Login</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
+							id="adminActivites" style="display: none">Admin Activities</a>
+						<div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0"
+							style="max-height: 540px; overflow-y: auto;">
+							<a href="./content-edit.html" class="dropdown-item">Change Website Content <br />Services
+								and Products</a>
+							<a href="./leads.html" class="dropdown-item">Leads</a>
+							<a href="./paymentLeads.html" class="dropdown-item">Payments Leads</a>
+							<a href="./careerLeads.html" class="dropdown-item">Career Leads</a>
+							<a href="./add-gallery.html" class="dropdown-item">Add Gallery</a>
+							<a href="./list-gallery.html" class="dropdown-item">List Gallery</a>
+							<a href="./uploadContact.html" class="dropdown-item">
+								Upload Contact Info</a>
+							<a href="uploadPayment.html" class="dropdown-item">
+								Upload Payment Info</a>
+							<a href="upload-logo.html" class="dropdown-item">Upload Logo</a>
+							<a href="./uploadHomePageImg.html" class="dropdown-item active">Upload Home Page Image</a>
+							<a href="./selectLogo.html" class="dropdown-item">Select Logo</a>
+							<a href="./selectHomePageImg.html" class="dropdown-item">Select Home Page Image</a>
+							<a href="./uploadReview.html" class="dropdown-item">Manage Reviews</a>
+							<a href="./uploadCareers.html" class="dropdown-item">Manage Careers</a>
+							<a href="./selectFooterLogo.html" class="dropdown-item"
+                  >Select Footer Logo</a
+                >
+                <a href="./uploadFooterLogo.html" class="dropdown-item"
+                  >upload Footer Logo</a
+                >
+							<a href="uploadClient.html" class="dropdown-item">Manage Clients</a>
+							<a href="./uploadFounder.html" class="dropdown-item">Manage Founders</a>
+							<a href="./uploadVideos.html" class="dropdown-item">Upload Videos</a>
+							<button id="logout" style="color: red" class="nav-link custom-brand" data-bs-toggle="modal"
+								data-bs-target="#logoutConfirmationModal">
+								Logout
+							</button>
+							<!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		 <div class="container-fluid py-5 bg-header">
+        <div class="row">
+          <h1 class="display-4 mt-5 text-center">Upload Home Page Image</h1>
+          <p class="text-center py-3">
+            <a href="./index.html" class="nav-item text-black-50">Admin Activities</a>
+            <span class="px-3">&gt;</span>
+            <a href="products.html" class="nav-item text-black-50">Upload Home Page Image</a>
+          </p>
+          <hr />
+        </div>
+      </div>
+	<!-- Navbar End -->
+
+
+	<!-- Full Screen Search Start -->
+	
+	<!-- Full Screen Search End -->
+
+	<!-- logout -->
+	<div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel"
+		data-bs-backdrop="static" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="logoutConfirmationModalLabel">
+						Confirm Logout
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">Are you sure you want to logout?</div>
+				<div class="modal-footer">
+					<!-- Cancel button to close the modal -->
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancel
+					</button>
+					<!-- Logout button to trigger the logout -->
+					<button type="button" class="btn btn-primary" id="confirmLogoutBtn">
+						Logout
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<p class="h1" style="text-align: center;" id="message"></p><!-- Message of success -->
+	<section>
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-4">
+					<div class="mb-4">
+						<label for="formFile" class="form-label">Select File :</label>
+						<input id="formFile" class="form-control" type="file">
+						<div id="message"></div>
+						<button id="uploadButton" type="button" class="btn btn-primary mt-3">Upload</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<!-- Footer Start -->
+	 <section id="foott" style="margin-top: 2rem;">
+    <footer class=" text-white main_footer" style="background-color: #343a40;">
+      <div class="container py-0">
+        <div class="row" id="foot">
+          <!-- Column 1: Company Information -->
+          <div class="col-lg-4 col-md-4 mt-4">
+            <p  class=""><img id="footerlogoimage" alt="logo" width="100px" height="70px"></p>
+            
+          </div>
+  
+        <div class="col-lg-8 col-md-6">
+					<div class="row gx-5">
+						<div class="col-lg-4 col-md-12 pt-5 ">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0">Get In Touch</h3>
+							</div>
+							<div class="d-flex mb-2 location-section">
+								<i class="bi bi-geo-alt text-primary me-2"></i>
+								<p class="mb-0 contact-data"></p>
+							</div>
+							<div class="d-flex mb-2 email-section">
+								<i class="bi bi-envelope-open text-primary me-2"></i>
+								<p class="mb-0 contact-data"></p>
+							</div>
+							<div class="d-flex mb-2 phone-section2">
+								<i class="bi bi-telephone text-primary me-2"></i>
+								<p class="mb-0 contact-data2"></p>
+							</div>
+							<div id="connectWithUsBanner" class="d-flex mt-4" style="display: none !important"></div>
+						</div>
+						<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0">Quick Links</h3>
+							</div>
+							<div class="link-animated d-flex flex-column justify-content-start">
+								<a class="text-light mb-2" href="./index.html"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+								<a class="text-light mb-2" href="./about.html"><i
+										class="bi bi-arrow-right text-primary me-2"></i>About
+									Us</a>
+								<a class="text-light mb-2" href="./service.html" id="services2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Our
+									Services</a>
+								<a class="text-light mb-2" href="./careers.html" id="careers2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Careers</a>
+								<a class="text-light mb-2" href="./founders.html" id="founders2"
+									style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Founders</a>
+								<a class="text-light mb-2" href="./contact.html"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Contact
+									Us</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0">Popular Links</h3>
+							</div>
+							<div class="link-animated d-flex flex-column justify-content-start">
+								<a class="text-light mb-2" href="./gallery.html" id="gallery2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Gallery</a>
+								<a class="text-light mb-2" href="./reviews.html" id="reviews2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Reviews</a>
+								<a class="text-light mb-2" href="./payments.html" id="payments2"
+									style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>payments</a>
+								<a class="text-light mb-2" href="./clients.html" id="clients2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Clients</a>
+								<a class="text-light mb-2" href="./careers.html" id="careers2" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Careers</a>
+								<a class="text-light mb-2" id="products2" href="products.html" style="display: none"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Products</a>
+								<a class="text-light mb-2" href="login.html"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Login</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  
+
+    <div class="row b_part">
+          <div class="col-lg-12 col-md-12" style="text-align: center; padding: 3px 15px; font-size: 19px; ">
+            <p style="margin: 0;font-size: 14px;">&copy; <a class="text-white border-bottom" href="#" id="footerMessage"></a> </p>
+          </div>
+        </div>
+
+	</div>
+  </footer>
+  </section>
+	<!-- Footer End -->
+
+
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="lib/code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="lib/cdn.jsdelivr.net/npm/bootstrap%405.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/wow/wow.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/counterup/counterup.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+	 <script type="module">
+      function getHomepageDataFromSessionStorage() {
+        const HomePagedata = sessionStorage.getItem("homepageData");
+        return JSON.parse(HomePagedata);
+      }
+      const homepageData = getHomepageDataFromSessionStorage();
+      document.getElementById("footerlogoimage").src =
+        homepageData.footerlogoimageurl;
+    </script>
+
+	<!-- Template Javascript -->
+
+	<script type="module" src="./js/script.js"></script>
+	<script type="module" src="./js/uploadHomePageAndAboutUsImg.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+
+</html>

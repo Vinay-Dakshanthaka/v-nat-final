@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Firebase Script</h1>
+</body>
+<script type="module">
+	import {
+		doc,
+		setDoc,
+	} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+	import { firestore } from "./js/firebase-config.js";
+
+	var collectionName = "totfd";
+	var docName = "Homepage";
+	var contactsAndPaymentsDocName = "ContactAndPayments";
+	var productandServicesDocName = "ProductsAndServices";
+
+	const docRef = doc(firestore, collectionName, docName);
+	setDoc(docRef, {})
+		.then(() => {
+			console.log("Document 'homepage' successfully written!");
+		})
+		.catch((error) => {
+			console.error("Error writing document 'homepage': ", error);
+		});
+
+	const contactsAndPaymentsDocRef = doc(
+		firestore,
+		collectionName,
+		contactsAndPaymentsDocName
+	);
+	setDoc(contactsAndPaymentsDocRef, {})
+		.then(() => {
+			console.log("Document 'contactsAndPayments' successfully written!");
+		})
+		.catch((error) => {
+			console.error("Error writing document 'AboutUs': ", error);
+		});
+
+	const productandServicesDocRef = doc(
+		firestore,
+		collectionName,
+		productandServicesDocName
+	);
+	setDoc(productandServicesDocRef, {})
+		.then(() => {
+			console.log("Document 'ProductsAndServices' successfully written!");
+		})
+		.catch((error) => {
+			console.error("Error writing document 'AboutUs': ", error);
+		});
+</script>
+
+</html>
