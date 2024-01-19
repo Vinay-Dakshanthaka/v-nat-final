@@ -812,7 +812,7 @@ function createCategoryContainer(category, index) {
     categoryContainer.style.background = `linear-gradient(180deg, white, ${gradientColor})`;
 
     const innerContent = `
-        <a href="products.html" class="text-decoration-none text-dark m-3 product-link">
+        <a href="products.html" class="text-decoration-none text-dark m-1 product-link">
             <div class="card-body d-flex flex-column align-items-center justify-content-center custom-card ">
                 <div class="topbox">
                     <img class="" src="${category.image}" alt="Card image cap">
