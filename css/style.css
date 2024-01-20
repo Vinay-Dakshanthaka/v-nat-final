@@ -18,7 +18,15 @@ body{
 	height: 100px;
 	width: 180px;
 	border-radius: 100%;
+	margin-left: -30%;
 }
+#footerlogoimage {
+	padding: 5px;
+	margin: auto;
+	height: 250px;
+	width: 250px;
+	margin-left: -5%;
+  }
 
 /*** Spinner ***/
 .spinner {
@@ -169,7 +177,7 @@ h6,
 }
 .navcon{
 	height: 120px;
-	background: linear-gradient(to bottom, #FE77A6 80%, #41b2db 20%);
+	background: linear-gradient(to bottom, #FE77A6 90%, #41b2db 10%) !important;
 }
 /* .navbar {
 	height: 120px;
@@ -223,7 +231,7 @@ h6,
 
 	.sticky-top.navbar-dark {
 		position: fixed;
-		background: #ffffff;
+		background: linear-gradient(to bottom, #FE77A6 90%, #41b2db 10%) !important;
 	}
 
 	.navbar-dark .navbar-nav .nav-link::before {
