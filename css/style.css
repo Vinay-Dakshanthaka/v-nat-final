@@ -26,8 +26,16 @@ body{
 	height: 250px;
 	width: 250px;
 	margin-left: -5%;
+	margin-top: 4%;
   }
-
+  @media screen and (min-width: 1200px) {
+	#footerlogoimage{
+		margin-left: -20% !important;
+	}
+	.col-lg-4.col-md-12.pt-5{
+		margin-left:-5%;
+	} 
+}
 /*** Spinner ***/
 .spinner {
 	width: 40px;

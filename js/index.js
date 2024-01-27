@@ -380,7 +380,7 @@ function displaySocialIcons(data) {
             const facebookIcon = createSocialIcon(
                 "facebook",
                 data.facebook,
-                "fab fa-facebook-f"
+                "https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
             );
             connectWithUsBanner.appendChild(facebookIcon);
         }
@@ -388,7 +388,7 @@ function displaySocialIcons(data) {
             const instagramIcon = createSocialIcon(
                 "instagram",
                 data.instagram,
-                "fab fa-instagram"
+                "https://e0.pxfuel.com/wallpapers/16/46/desktop-wallpaper-hq-instagram-png-transparent-instagram-png-instagram-logo.jpg"
             );
             connectWithUsBanner.appendChild(instagramIcon);
         }
@@ -396,7 +396,7 @@ function displaySocialIcons(data) {
             const youtubeIcon = createSocialIcon(
                 "youtube",
                 data.youtube,
-                "fab fa-youtube"
+                "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
             );
             connectWithUsBanner.appendChild(youtubeIcon);
         }
@@ -404,19 +404,24 @@ function displaySocialIcons(data) {
             const twitterIcon = createSocialIcon(
                 "twitter",
                 data.twitter,
-                "fab fa-twitter"
+                "https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.1448711260.1706140800&semt=ais"
             );
             connectWithUsBanner.appendChild(twitterIcon);
         }
     }
 }
-function createSocialIcon(platform, url, iconClass) {
+function createSocialIcon(platform, url,imgSrc) {
     const icon = document.createElement("a");
-    icon.className = "btn btn-primary btn-square me-2";
+    icon.className = "btn me-2";
     icon.href = url;
     icon.target = "_blank";
-    const iconImage = document.createElement("i");
-    iconImage.className = iconClass + " fw-normal";
+    const iconImage = document.createElement("img");
+    iconImage.src = imgSrc;
+    iconImage.style.width="30px";
+    iconImage.style.height = "30px";
+    iconImage.style.borderRadius="8px"
+    iconImage.style.objectFit="contain"
+    // iconImage.className = imgSrc + " fw-normal";
     icon.appendChild(iconImage);
     return icon;
 }
