@@ -165,7 +165,7 @@ async function applyFontFamilyAndLogoToNavbar() {
 			const footerMessage = document.getElementById("footerMessage");
 
 			var element = document.querySelector(".bg-header");
-			console.log(element);
+			// console.log(element);
 			const homepageImageUrl = homepageData.homePageimageurl;
 			if (homepageImageUrl && element) {
 				element.style.background = `linear-gradient(rgba(9, 30, 62, 0.7), rgba(9, 30, 62, 0.7)), url('${homepageImageUrl}') center center no-repeat`;
@@ -182,7 +182,7 @@ async function applyFontFamilyAndLogoToNavbar() {
 				if (fontSize) {
 					navbar.style.fontSize = fontSize;
 				}
-				console.log(footerMessage);
+				// console.log(footerMessage);
 				if (footerMessage) {
 					footerMessage.style.fontFamily = font;
 					if (fontSize) {
