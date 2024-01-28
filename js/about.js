@@ -44,14 +44,14 @@ async function populatePage() {
 
 				const pointElement = document.createElement("h5");
 				pointElement.className = "mb-3";
-				console.log(pointElement);
+				//console.log(pointElement);
 				addIconToElement(pointElement)
 					.then((message) => {
-						//console.log(message);
-						//console.log(pointElement); // Check if the icon is present in the pointElement
+						// //console.log(message);
+						// //console.log(pointElement); // Check if the icon is present in the pointElement
 					})
 					.catch((error) => {
-						console.error(error);
+						//console.error(error);
 					});
 				pointElement.textContent = point;
 				col.appendChild(pointElement);
@@ -164,7 +164,7 @@ function populateFoundersTable() {
 		});
 		TeamSection.style.display = "block";
 	} else {
-		console.log("No founders data present in session storage");
+		//console.log("No founders data present in session storage");
 	}
 }
 

@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		signInWithEmailAndPassword(auth, email, password)
 			.then(async (userCredential) => {
 				document.querySelector("#sub_btn").textContent = "Submit";
-				//console.log("login sucess");
+				////console.log("login sucess");
 				rememberMe();
 				const user = userCredential.user;
 				const loginForm = document.getElementById("loginForm");
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 			.catch((error) => {
 				const authError = document.getElementById("loginError");
-				console.error(error);
+				//console.error(error);
 
 				if (error.code && error.code.startsWith("auth/")) {
 					const errorCode = error.code.split("/")[1];
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		e.preventDefault();
 		document.querySelector("#sub_btn").disabled = true;
 		document.querySelector("#sub_btn").textContent = "Logging in ...";
-		// console.log("inside loginformevent")
+		// //console.log("inside loginformevent")
 		const email = document.getElementById("email").value;
 		const password = document.getElementById("password").value;
 

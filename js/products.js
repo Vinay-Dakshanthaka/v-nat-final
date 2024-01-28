@@ -6,9 +6,9 @@ function fetchProductsDataFromLocalStorage() {
 }
 
 async function populateProductsContainer(productsData) {
-	console.log(productsData);
+	// console.log(productsData);
 	if (!productsData || !productsData.categories) {
-		console.log("No product data available.");
+		// console.log("No product data available.");
 		return;
 	}
 
@@ -132,7 +132,7 @@ const isMobileValid = mobileRegex.test(mobile);
 
 if (!isEmailValid && !isMobileValid) {
     alert("Please enter a valid Email or Mobile Number.");
-    console.error("Invalid email or mobile number.");
+    // console.error("Invalid email or mobile number.");
     return false;
 }
 
@@ -150,12 +150,12 @@ if (!isEmailValid && !isMobileValid) {
 		emailjs
 			.send("service_reh310e", "template_0lqohuh", templateParams)
 			.then(function (response) {
-				console.log("Email sent:", response);
+				// console.log("Email sent:", response);
 				document.getElementById("successMessage").style.display = "block";
 				document.getElementById("buyForm").reset();
 			})
 			.catch(function (error) {
-				console.error("Email sending failed:", error);
+				// console.error("Email sending failed:", error);
 			});
 
 		const buyModal = new bootstrap.Modal(document.getElementById("buyModal"));
@@ -184,7 +184,7 @@ function populateCategories(productsData) {
 		categoryItem.addEventListener("click", () => {
 			const categoryData = getCategoryDataByName(productsData, category.name);
 			populateProductsContainer(categoryData);
-			console.log(categoryData);
+			// console.log(categoryData);
 		});
 		categoryContainer.appendChild(categoryItem);
 	});
@@ -196,7 +196,7 @@ function getCategoryDataByName(productsData, categoryName) {
 	);
 
 	if (filteredCategories.length === 0) {
-		console.log(`No category found with the name ${categoryName}.`);
+		// console.log(`No category found with the name ${categoryName}.`);
 		return null;
 	}
 

@@ -52,12 +52,12 @@ submitButton.addEventListener("click", function (event) {
 
 	updateDoc(contactAndPaymentDoc, data)
 		.then(() => {
-			console.log("Document successfully written!");
+			//console.log("Document successfully written!");
 			document.getElementById("message").textContent =
 				"Sucessfully Updated , Go to Home Page And Refresh to see the changes!";
 		})
 		.catch((error) => {
-			console.error("Error writing document: ", error);
+			//console.error("Error writing document: ", error);
 		});
 });
 
@@ -93,7 +93,7 @@ function populateForm() {
 			}
 		})
 		.catch((error) => {
-			console.error("Error getting document:", error);
+			//console.error("Error getting document:", error);
 		});
 }
 document.addEventListener("DOMContentLoaded", function () {

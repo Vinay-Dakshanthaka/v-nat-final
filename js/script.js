@@ -26,13 +26,13 @@ function onLoggedOut() {
 confirmLogoutBtn.addEventListener("click", () => {
 	signOut(auth)
 		.then(() => {
-			console.log("User logged out successfully");
+			// console.log("User logged out successfully");
 			window.location.href = "index.html";
 			history.replaceState(null, null, "index.html");
 			sessionStorage.setItem("loggedIn", "false");
 		})
 		.catch((error) => {
-			console.error("Error during logout:", error);
+			// console.error("Error during logout:", error);
 		});
 });
 
@@ -111,7 +111,7 @@ if (foundersData && foundersData.length > 0) {
 	const foundersLink2 = document.getElementById("founders2");
 	foundersLink2.style.display = "block";
 } else {
-	console.log("No valid founders data found in session storage");
+	// console.log("No valid founders data found in session storage");
 }
 
 const careersData = JSON.parse(sessionStorage.getItem("careersData"));
@@ -124,7 +124,7 @@ if (careersData && careersData.length > 0) {
 	const careersLink2 = document.getElementById("careers2");
 	careersLink2.style.display = "block";
 } else {
-	console.log("No valid careers data found in session storage");
+	// console.log("No valid careers data found in session storage");
 }
 
 const clientCollection = JSON.parse(sessionStorage.getItem("clientsData"));
@@ -135,7 +135,7 @@ if (clientCollection && clientCollection.length > 0) {
 	const clientsLink2 = document.getElementById("clients2");
 	clientsLink2.style.display = "block";
 } else {
-	console.log("No valid clients data found in session storage");
+	// console.log("No valid clients data found in session storage");
 }
 
 function getHomepageDataFromSessionStorage() {
@@ -165,12 +165,12 @@ async function applyFontFamilyAndLogoToNavbar() {
 			const footerMessage = document.getElementById("footerMessage");
 
 			var element = document.querySelector(".bg-header");
-			//console.log(element);
+			console.log(element);
 			const homepageImageUrl = homepageData.homePageimageurl;
 			if (homepageImageUrl && element) {
 				element.style.background = `linear-gradient(rgba(9, 30, 62, 0.7), rgba(9, 30, 62, 0.7)), url('${homepageImageUrl}') center center no-repeat`;
 				element.style.backgroundSize = "cover";
-				//console.log(homepageImageUrl);
+				console.log(homepageImageUrl);
 			}
 
 			if (homepageData && homepageData.footerMessage !== undefined) {
@@ -182,7 +182,7 @@ async function applyFontFamilyAndLogoToNavbar() {
 				if (fontSize) {
 					navbar.style.fontSize = fontSize;
 				}
-				//console.log(footerMessage);
+				console.log(footerMessage);
 				if (footerMessage) {
 					footerMessage.style.fontFamily = font;
 					if (fontSize) {
@@ -190,12 +190,12 @@ async function applyFontFamilyAndLogoToNavbar() {
 					}
 				}
 
-				console.log(fontSize);
-				console.log(font);
+				// console.log(fontSize);
+				// console.log(font);
 			}
 		}
 	} catch (error) {
-		console.error("Error getting font family from the session storage:", error);
+		// console.error("Error getting font family from the session storage:", error);
 	}
 }
 
@@ -295,7 +295,7 @@ if (data && Object.keys(data).length > 0) {
 		phoneData2.textContent = formattedMobile;
 	}
 } else {
-	console.log("No payment data found in session storage.");
+	// console.log("No payment data found in session storage.");
 }
 
 const vendorCarousel = document.querySelector(".vendor-carousel");
@@ -357,10 +357,10 @@ function populateClientTable() {
 			const vendorSection = document.getElementById("vendorSection");
 			vendorSection.style.display = "block";
 		} else {
-			console.log("No data in session storage");
+			// console.log("No data in session storage");
 		}
 	} else {
-		console.log("No vendor carousel");
+		// console.log("No vendor carousel");
 	}
 }
 

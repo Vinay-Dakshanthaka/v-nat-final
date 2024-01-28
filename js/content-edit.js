@@ -48,7 +48,7 @@ websiteContentForm.addEventListener("submit", (e) => {
 	const homePageWelcome = homePageWelcomeInput.value;
 	const homePageCaption = homePageCaptionInput.value;
 	const homePageCaption2 = homePageCaptionInput2.value;
-	const homePageCaption3= homePageCaptionInput3.value;
+	const homePageCaption3 = homePageCaptionInput3.value;
 	const footerMessage = footerMessageInput.value;
 
 	// Basic form validation
@@ -85,7 +85,7 @@ websiteContentForm.addEventListener("submit", (e) => {
 	}
 	if (!footerMessage) {
 		footerMessageError.textContent = "Enter Footer Message";
-		console.log("a");
+		//console.log("a");
 		footerMessageError.style.display = "block";
 		isValid = false;
 	}
@@ -104,7 +104,7 @@ websiteContentForm.addEventListener("submit", (e) => {
 	};
 	updateDoc(homepageDocRef, newData)
 		.then(() => {
-			console.log("Data updated successfully!");
+			//console.log("Data updated successfully!");
 			messageElement.textContent =
 				"Home Page Data updated successfully!Go to Home Page and Refresh to see the changes.";
 			messageElement.style.color = "green";
@@ -112,7 +112,7 @@ websiteContentForm.addEventListener("submit", (e) => {
 			window.scrollTo(0, 0);
 		})
 		.catch((error) => {
-			console.error("Error updating data: ", error);
+			//console.error("Error updating data: ", error);
 			messageElement.textContent = "Error updating data. Please try again.";
 			messageElement.style.color = "red";
 			messageElement.style.display = "block";
@@ -175,7 +175,7 @@ document
 		updateDoc(homepageDocRef, {
 			showWhyUsSection: isVisible,
 		});
-		console.log("a");
+		//console.log("a");
 	});
 
 document
@@ -228,8 +228,8 @@ function saveAboutUsData() {
 
 	updateDoc(homepageDocRef, aboutUsData)
 		.then(() => {
-			console.log("About Us data saved successfully!");
-			console.log("Data updated successfully!");
+			//console.log("About Us data saved successfully!");
+			//console.log("Data updated successfully!");
 			messageElement.textContent =
 				"About Us Data updated successfully!Go to Home Page and Refresh to see the changes.";
 			messageElement.style.color = "green";
@@ -237,7 +237,7 @@ function saveAboutUsData() {
 			window.scrollTo(0, 0);
 		})
 		.catch((error) => {
-			console.error("Error saving data: ", error);
+			//console.error("Error saving data: ", error);
 			messageElement.textContent = "Error updating data. Please try again.";
 			messageElement.style.color = "red";
 			messageElement.style.display = "block";
@@ -286,9 +286,9 @@ async function deletePointFromAboutUsDocRef(pointText) {
 	try {
 		const fieldValue = arrayRemove(pointText);
 		await updateDoc(homepageDocRef, { aboutUsPoints: fieldValue });
-		console.log("Point deleted from Firestore successfully!");
+		//console.log("Point deleted from Firestore successfully!");
 	} catch (error) {
-		console.error("Error deleting point from Firestore: ", error);
+		//console.error("Error deleting point from Firestore: ", error);
 	}
 }
 
@@ -310,7 +310,7 @@ function createPointDiv(pointText) {
 		0;
 		messageElement.style.display = "block";
 		window.scrollTo(0, 0);
-		console.log("Point deleted from UI successfully!");
+		//console.log("Point deleted from UI successfully!");
 	});
 
 	aboutUsPointsContainer.appendChild(pointDiv);
@@ -414,7 +414,7 @@ document
 				return updateDoc(homepageDocRef, whyUsData);
 			})
 			.then(() => {
-				console.log("Image uploaded and data saved successfully!");
+				//console.log("Image uploaded and data saved successfully!");
 				messageElement.textContent =
 					"Why Us Data updated successfully! Go to Home Page and Refresh to see the changes.";
 				messageElement.style.color = "green";
@@ -422,7 +422,7 @@ document
 				window.scrollTo(0, 0);
 			})
 			.catch((error) => {
-				console.error("Error uploading image or saving data:", error);
+				//console.error("Error uploading image or saving data:", error);
 				messageElement.textContent = "Error updating data. Please try again.";
 				messageElement.style.color = "red";
 				messageElement.style.display = "block";
@@ -441,8 +441,8 @@ function saveServicesData() {
 	// Save the data to Firebase
 	updateDoc(productsAndServicesDocRef, ServicesData)
 		.then(() => {
-			console.log("Services data saved successfully!");
-			console.log("Data updated successfully!");
+			//console.log("Services data saved successfully!");
+			//console.log("Data updated successfully!");
 			messageElement.textContent =
 				"Service Data updated successfully!Go to Home Page and Refresh to see the changes.";
 			messageElement.style.color = "green";
@@ -450,7 +450,7 @@ function saveServicesData() {
 			window.scrollTo(0, 0);
 		})
 		.catch((error) => {
-			console.error("Error saving data: ", error);
+			//console.error("Error saving data: ", error);
 			messageElement.textContent = "Error updating data. Please try again.";
 			messageElement.style.color = "red";
 			messageElement.style.display = "block";
@@ -472,8 +472,8 @@ function collectServicesFormData() {
 			"input[placeholder='Service Description']"
 		);
 
-		//console.log(serviceTitleInput);
-		//console.log(serviceDescInput);
+		////console.log(serviceTitleInput);
+		////console.log(serviceDescInput);
 		const service = {
 			title: serviceTitleInput.value,
 			description: serviceDescInput.value,
@@ -503,12 +503,12 @@ function populateServicesForm(docSnapshot) {
 		) {
 			servicesData.services.forEach((service) => {
 				createServiceDiv(service.title, service.description);
-				//console.log(service.title, service.description);
+				////console.log(service.title, service.description);
 			});
 		} else {
-			console.log(
-				"The 'services' property does not exist or is not an array in servicesData."
-			);
+			//console.log(
+			// 	"The 'services' property does not exist or is not an array in servicesData."
+			// );
 		}
 	}
 }
@@ -523,11 +523,11 @@ async function deleteServiceFromFirestore(title, description) {
 			services: arrayRemove(serviceToRemove),
 		});
 
-		console.log(
-			"Service deleted from Firestore successfully!Go to Home Page and Refresh to see the changes."
-		);
+		//console.log(
+		// 	"Service deleted from Firestore successfully!Go to Home Page and Refresh to see the changes."
+		// );
 	} catch (error) {
-		console.error("Error deleting service from Firestore: ", error);
+		//console.error("Error deleting service from Firestore: ", error);
 	}
 }
 
@@ -536,16 +536,14 @@ function createServiceDiv(title, description) {
 	serviceDiv.classList.add("service");
 
 	serviceDiv.innerHTML = `
-	<p>Service Title: <input type="text" placeholder="Service Title" class="form-control border-2 border border-primary" value="${
-		title || ""
-	}" /></p>
-	  Service Description: <input type="text" placeholder="Service Description" class="form-control border-2 border border-primary" value="${
-			description || ""
+	<p>Service Title: <input type="text" placeholder="Service Title" class="form-control border-2 border border-primary" value="${title || ""
+		}" /></p>
+	  Service Description: <input type="text" placeholder="Service Description" class="form-control border-2 border border-primary" value="${description || ""
 		}" />
 	  <input type="button" class="btn btn-primary delete-service red-button" value="Delete" />
 	`;
 
-	//console.log(description);
+	////console.log(description);
 	const deleteButton = serviceDiv.querySelector(".delete-service");
 	deleteButton.addEventListener("click", async () => {
 		const titleInput = serviceDiv.querySelector(
@@ -555,8 +553,8 @@ function createServiceDiv(title, description) {
 			"input[placeholder='Service Description']"
 		);
 		//location.reload();
-		//console.log(titleInput);
-		//console.log(descriptionInput);
+		////console.log(titleInput);
+		////console.log(descriptionInput);
 		await deleteServiceFromFirestore(titleInput.value, descriptionInput.value);
 		serviceDiv.remove();
 		messageElement.textContent =
@@ -641,17 +639,17 @@ function saveCategoriesData() {
 				return updateDoc(productsAndServicesDocRef, productsData);
 			})
 			.then(() => {
-				console.log(
-					"Product data saved successfully! Go to Home Page and Refresh to see the changes."
-				);
-				console.log(productsDataPromise);
+				//console.log(
+				// 	"Product data saved successfully! Go to Home Page and Refresh to see the changes."
+				// );
+				//console.log(productsDataPromise);
 				messageElement.textContent = "Product Data updated successfully!";
 				messageElement.style.color = "green";
 				messageElement.style.display = "block";
 				window.scrollTo(0, 0);
 			})
 			.catch((error) => {
-				console.error("Error saving data: ", error);
+				//console.error("Error saving data: ", error);
 				messageElement.textContent = "Error updating data. Please try again.";
 				messageElement.style.color = "red";
 				messageElement.style.display = "block";
@@ -661,176 +659,176 @@ function saveCategoriesData() {
 }
 
 function collectCategoriesFormData() {
-    return new Promise(async (resolve, reject) => {
-        const categoriesData = {
-            productCaption: ourProductsCaption.value,
-            categories: [],
-        };
+	return new Promise(async (resolve, reject) => {
+		const categoriesData = {
+			productCaption: ourProductsCaption.value,
+			categories: [],
+		};
 
-        const categoryElements = document.querySelectorAll(".category");
-        const promises = [];
+		const categoryElements = document.querySelectorAll(".category");
+		const promises = [];
 
-        for (const categoryElement of categoryElements) {
-            const categoryNameInput = categoryElement.querySelector(
-                "input[placeholder='Category Name']"
-            );
+		for (const categoryElement of categoryElements) {
+			const categoryNameInput = categoryElement.querySelector(
+				"input[placeholder='Category Name']"
+			);
 
-            const originalPlaceholder = "Category Name";
-            const styleElement = document.createElement("style");
-            styleElement.textContent = `
+			const originalPlaceholder = "Category Name";
+			const styleElement = document.createElement("style");
+			styleElement.textContent = `
                 .error-input {
                     border: 2px solid red;
                     color: red;
                 }
             `;
-            document.head.appendChild(styleElement);
+			document.head.appendChild(styleElement);
 
-            const categoryImageInput = categoryElement.querySelector(
-                "input[type='file'][class='category-image-input']"
-            );
-            const categoryDescriptionInput = categoryElement.querySelector(
-                "input[placeholder='Category Description']"
-            );
+			const categoryImageInput = categoryElement.querySelector(
+				"input[type='file'][class='category-image-input']"
+			);
+			const categoryDescriptionInput = categoryElement.querySelector(
+				"input[placeholder='Category Description']"
+			);
 
-            if (categoryNameInput.value.trim() === "") {
-                categoryNameInput.classList.add("error-input");
-                categoryNameInput.setAttribute(
-                    "placeholder",
-                    "Category Name cannot be empty"
-                );
-                return;
-            } else {
-                categoryNameInput.classList.remove("error-input");
-                categoryNameInput.setAttribute("placeholder", originalPlaceholder);
-            }
+			if (categoryNameInput.value.trim() === "") {
+				categoryNameInput.classList.add("error-input");
+				categoryNameInput.setAttribute(
+					"placeholder",
+					"Category Name cannot be empty"
+				);
+				return;
+			} else {
+				categoryNameInput.classList.remove("error-input");
+				categoryNameInput.setAttribute("placeholder", originalPlaceholder);
+			}
 
-            const categoryProductsDiv = categoryElement.querySelector(".category-products");
-			console.log(categoryProductsDiv)
-            const productsDataPromise = collectProductsData(categoryProductsDiv);
+			const categoryProductsDiv = categoryElement.querySelector(".category-products");
+			//console.log(categoryProductsDiv)
+			const productsDataPromise = collectProductsData(categoryProductsDiv);
 
-            promises.push(
-                productsDataPromise.then(async (productsData) => {
-                    let imageUrl = null;
+			promises.push(
+				productsDataPromise.then(async (productsData) => {
+					let imageUrl = null;
 
-                    if (categoryImageInput && categoryImageInput.files.length > 0) {
-                        imageUrl = await uploadCategoryImageToFirebaseStorage(
-                            categoryImageInput.files[0]
-                        );
-                    } else {
+					if (categoryImageInput && categoryImageInput.files.length > 0) {
+						imageUrl = await uploadCategoryImageToFirebaseStorage(
+							categoryImageInput.files[0]
+						);
+					} else {
 						// No new image selected, retain the existing image URL
 						const existingImageUrl = categoryElement.querySelector(".preview-image")?.src || "";
 
 						imageUrl = existingImageUrl || null;
 					}
 
-                    const category = {
-                        name: categoryNameInput.value,
-                        image: imageUrl,
-                        description: categoryDescriptionInput.value,
-                        products: productsData,
-                    };
-                    categoriesData.categories.push(category);
-                })
-            );
-        }
+					const category = {
+						name: categoryNameInput.value,
+						image: imageUrl,
+						description: categoryDescriptionInput.value,
+						products: productsData,
+					};
+					categoriesData.categories.push(category);
+				})
+			);
+		}
 
-        try {
-            await Promise.all(promises);
-            resolve(categoriesData);
-        } catch (error) {
-            reject(error);
-        }
-    });
+		try {
+			await Promise.all(promises);
+			resolve(categoriesData);
+		} catch (error) {
+			reject(error);
+		}
+	});
 }
 
-	
 
-  async function uploadCategoryImageToFirebaseStorage(imageFile) {
+
+async function uploadCategoryImageToFirebaseStorage(imageFile) {
 	const storageRef = ref(storage, "totfd/catogoryImages/" + imageFile.name);
-  
+
 	try {
-	  await uploadBytes(storageRef, imageFile);
-	  const imageUrl = await getDownloadURL(storageRef);
-	  return imageUrl;
+		await uploadBytes(storageRef, imageFile);
+		const imageUrl = await getDownloadURL(storageRef);
+		return imageUrl;
 	} catch (error) {
-	  console.error("Error uploading image:", error);
-	  return null;
+		//console.error("Error uploading image:", error);
+		return null;
 	}
-  }
+}
 
-  async function collectProductsData(categoryProductsDiv) {
-    const productsData = [];
+async function collectProductsData(categoryProductsDiv) {
+	const productsData = [];
 
-    const productElements = categoryProductsDiv.querySelectorAll(".product");
+	const productElements = categoryProductsDiv.querySelectorAll(".product");
 
-    const uploadPromises = [];
+	const uploadPromises = [];
 
-    for (const productElement of productElements) {
-        const productTitleInput = productElement.querySelector(
-            "input[placeholder='Product Title']"
-        );
-        const productDescInput = productElement.querySelector(
-            "input[placeholder='Product Description']"
-        );
-        const productPriceInput = productElement.querySelector(
-            "input[placeholder='Product Price']"
-        );
-        const productQuantityInput = productElement.querySelector(
-            "input[placeholder='Product Quantity']"
-        );
-        const imageInput = productElement.querySelector("input[type='file']");
-        const imagePreview = productElement.querySelector(".image-preview");
-        const imageUrl = productElement.querySelector(".preview-image")?.src || "";
-        
-        if (imageInput.style.display !== "none" && imageInput.files[0]) {
-            const uploadPromise = uploadImageToFirebaseStorage(
-                imageInput.files[0]
-            ).then((uploadedImageUrl) => {
-                const product = {
-                    title: productTitleInput.value,
-                    Price: productPriceInput.value,
-                    Quantity: productQuantityInput.value,
-                    description: productDescInput.value,
-                    imageUrl: uploadedImageUrl,
-                };
-                productsData.push(product);
-            });
-            uploadPromises.push(uploadPromise);
-        } else if (imageUrl) {
-            // Use the existing imageUrl for old products
-            const product = {
-                title: productTitleInput.value,
-                Price: productPriceInput.value,
-                Quantity: productQuantityInput.value,
-                description: productDescInput.value,
-                imageUrl: imageUrl,
-            };
-            productsData.push(product);
-        }
-    }
+	for (const productElement of productElements) {
+		const productTitleInput = productElement.querySelector(
+			"input[placeholder='Product Title']"
+		);
+		const productDescInput = productElement.querySelector(
+			"input[placeholder='Product Description']"
+		);
+		const productPriceInput = productElement.querySelector(
+			"input[placeholder='Product Price']"
+		);
+		const productQuantityInput = productElement.querySelector(
+			"input[placeholder='Product Quantity']"
+		);
+		const imageInput = productElement.querySelector("input[type='file']");
+		const imagePreview = productElement.querySelector(".image-preview");
+		const imageUrl = productElement.querySelector(".preview-image")?.src || "";
 
-    try {
-        await Promise.all(uploadPromises);
-        
-        return productsData;
-    } catch (error) {
-        console.error("Error uploading images:", error);
-        return null;
-    }
+		if (imageInput.style.display !== "none" && imageInput.files[0]) {
+			const uploadPromise = uploadImageToFirebaseStorage(
+				imageInput.files[0]
+			).then((uploadedImageUrl) => {
+				const product = {
+					title: productTitleInput.value,
+					Price: productPriceInput.value,
+					Quantity: productQuantityInput.value,
+					description: productDescInput.value,
+					imageUrl: uploadedImageUrl,
+				};
+				productsData.push(product);
+			});
+			uploadPromises.push(uploadPromise);
+		} else if (imageUrl) {
+			// Use the existing imageUrl for old products
+			const product = {
+				title: productTitleInput.value,
+				Price: productPriceInput.value,
+				Quantity: productQuantityInput.value,
+				description: productDescInput.value,
+				imageUrl: imageUrl,
+			};
+			productsData.push(product);
+		}
+	}
+
+	try {
+		await Promise.all(uploadPromises);
+
+		return productsData;
+	} catch (error) {
+		//console.error("Error uploading images:", error);
+		return null;
+	}
 }
 
 
 async function uploadImageToFirebaseStorage(imageFile) {
-    const storageRef = ref(storage, "totfd/products/" + imageFile.name);
+	const storageRef = ref(storage, "totfd/products/" + imageFile.name);
 
-    try {
-        await uploadBytes(storageRef, imageFile);
-        const imageUrl = await getDownloadURL(storageRef);
-        return imageUrl;
-    } catch (error) {
-        console.error("Error uploading image:", error);
-        return null;
-    }
+	try {
+		await uploadBytes(storageRef, imageFile);
+		const imageUrl = await getDownloadURL(storageRef);
+		return imageUrl;
+	} catch (error) {
+		//console.error("Error uploading image:", error);
+		return null;
+	}
 }
 
 
@@ -869,19 +867,19 @@ const deleteProduct = async (categoryProductsDiv, productName) => {
 				categories: updatedCategories,
 			});
 
-			console.log("Product deleted from Firestore successfully!");
+			//console.log("Product deleted from Firestore successfully!");
 		} catch (error) {
-			console.error("Error deleting product from Firestore: ", error);
+			//console.error("Error deleting product from Firestore: ", error);
 		}
 	} else {
-		console.error("Product not found in the DOM!");
+		//console.error("Product not found in the DOM!");
 	}
 };
 
 function populateProductsFromFirebase(docSnapshot) {
 	const productData = docSnapshot.data();
-	console.log(productData.productCaption);
-	console.log(productData.categories);
+	//console.log(productData.productCaption);
+	//console.log(productData.categories);
 	const productCaption = productData.productCaption;
 	const categories = productData.categories || [];
 	const productCaptionInput = document.getElementById("ourProductsCaption");
@@ -889,244 +887,244 @@ function populateProductsFromFirebase(docSnapshot) {
 
 	const categorySection = document.getElementById("categorySection");
 	categories.forEach((category) => {
-		if(category){
-		const newCategoryDiv = document.createElement("div");
-		newCategoryDiv.classList.add("category");
+		if (category) {
+			const newCategoryDiv = document.createElement("div");
+			newCategoryDiv.classList.add("category");
 
-		const categoryNameInput = document.createElement("input");
-		categoryNameInput.type = "text";
-		categoryNameInput.classList.add(
-			"form-control",
-			"border-2",
-			"border",
-			"border-primary"
-		);
-		categoryNameInput.placeholder = "Category Name";
-		categoryNameInput.value = category.name;
-
-		const categoryImageInput = document.createElement("input");
-		categoryImageInput.type = "file";
-		categoryImageInput.classList.add("category-image-input");
-		categoryImageInput.style.marginTop = "10px";
-
-		const categoryDescriptionInput = document.createElement("input");
-		categoryDescriptionInput.type = "text";
-		categoryDescriptionInput.classList.add(
-		  "form-control",
-		  "border-2",
-		  "border",
-		  "border-primary"
-		);
-		categoryDescriptionInput.placeholder = "Category Description";
-		categoryDescriptionInput.value = category.description;
-
-		const imagePreview = document.createElement("div");
-		imagePreview.classList.add("image-preview");
-		imagePreview.style.width = "3cm";
-		imagePreview.style.height = "3cm";
-		imagePreview.style.marginTop = "10px";
-		categoryImageInput.style.display = "none";
-
-		if (category.image) {
-			const imageElement = document.createElement("img");
-			imageElement.src = category.image;
-			imageElement.classList.add("preview-image");
-			imageElement.style.width = "100%";
-			imageElement.style.height = "100%";
-			imagePreview.appendChild(imageElement);
-	  
-			categoryImageInput.addEventListener("change", (e) => {
-			  const file = e.target.files[0];
-			  const reader = new FileReader();
-			  reader.onload = (event) => {
-				const imageUrl = event.target.result;
-				const imageElement = document.createElement("img");
-				imageElement.src = imageUrl;
-				imageElement.classList.add("preview-image");
-				imageElement.style.width = "100%";
-				imageElement.style.height = "100%";
-				categoryImagePreview.innerHTML = "";
-				categoryImagePreview.appendChild(imageElement);
-			  };
-			  reader.readAsDataURL(file);
-			});
-		  }
-
-		  const categoryImagePreview = document.createElement("div");
-		  categoryImagePreview.classList.add("image-preview");
-		  categoryImagePreview.style.width = "3cm";
-		  categoryImagePreview.style.height = "3cm";
-		  categoryImagePreview.style.marginTop = "10px";
-		  categoryImagePreview.style.marginBottom = "10px";
-	  
-
-		const addProductUnderCategoryButton = document.createElement("button");
-		addProductUnderCategoryButton.textContent = "+ Add Products";
-		addProductUnderCategoryButton.classList.add("btn", "btn-primary", "mt-1");
-		addProductUnderCategoryButton.addEventListener("click", (e) => {
-			e.preventDefault();
-			addProductUnderCategory(newCategoryDiv);
-			e.stopPropagation();
-		});
-
-		const deleteCategoryButton = document.createElement("button");
-		deleteCategoryButton.textContent = "Delete";
-		deleteCategoryButton.classList.add("btn", "btn-danger", "mt-1");
-		deleteCategoryButton.addEventListener("click", (e) => {
-			e.preventDefault();
-			deleteCategory(newCategoryDiv);
-			e.stopPropagation();
-		});
-		const categoryProductsDiv = document.createElement("div");
-		categoryProductsDiv.classList.add("category-products");
-
-		// Populate the products within the category
-		category.products.forEach((product) => {
-			const newProductDiv = document.createElement("div");
-			newProductDiv.classList.add("product");
-
-			const titleInput = document.createElement("input");
-			titleInput.type = "text";
-			titleInput.classList.add(
+			const categoryNameInput = document.createElement("input");
+			categoryNameInput.type = "text";
+			categoryNameInput.classList.add(
 				"form-control",
 				"border-2",
 				"border",
 				"border-primary"
 			);
-			titleInput.placeholder = "Product Title";
-			titleInput.value = product.title;
+			categoryNameInput.placeholder = "Category Name";
+			categoryNameInput.value = category.name;
 
-			const PriceInput = document.createElement("input");
-			PriceInput.type = "text";
-			PriceInput.classList.add(
+			const categoryImageInput = document.createElement("input");
+			categoryImageInput.type = "file";
+			categoryImageInput.classList.add("category-image-input");
+			categoryImageInput.style.marginTop = "10px";
+
+			const categoryDescriptionInput = document.createElement("input");
+			categoryDescriptionInput.type = "text";
+			categoryDescriptionInput.classList.add(
 				"form-control",
 				"border-2",
 				"border",
 				"border-primary"
 			);
-			PriceInput.placeholder = "Product Price";
-			PriceInput.value = product.Price;
-
-			const QuantityInput = document.createElement("input");
-			QuantityInput.type = "text";
-			QuantityInput.classList.add(
-				"form-control",
-				"border-2",
-				"border",
-				"border-primary"
-			);
-			QuantityInput.placeholder = "Product Quantity";
-			QuantityInput.value = product.Quantity;
-
-
-			const descriptionInput = document.createElement("input");
-			descriptionInput.type = "text";
-			descriptionInput.classList.add(
-				"form-control",
-				"border-2",
-				"border",
-				"border-primary"
-			);
-			descriptionInput.placeholder = "Product Description";
-			descriptionInput.value = product.description;
-
-			const imageInput = document.createElement("input");
-			imageInput.type = "file";
-			imageInput.classList.add(
-				"form-control",
-				"border-2",
-				"border",
-				"border-primary"
-			);
-			imageInput.style.marginTop = "10px";
+			categoryDescriptionInput.placeholder = "Category Description";
+			categoryDescriptionInput.value = category.description;
 
 			const imagePreview = document.createElement("div");
 			imagePreview.classList.add("image-preview");
 			imagePreview.style.width = "3cm";
 			imagePreview.style.height = "3cm";
 			imagePreview.style.marginTop = "10px";
-			imageInput.style.display = "none";
+			categoryImageInput.style.display = "none";
 
-			const changeImageButton = document.createElement("button");
-			changeImageButton.textContent = "Change Image";
-			changeImageButton.classList.add("btn", "btn-primary", "mt-1");
-			changeImageButton.addEventListener("click", (e) => {
-				e.preventDefault();
-				imageInput.style.display = "block";
-				changeImageButton.style.display = "none";
-				e.stopPropagation();
-			});
-
-			if (product.imageUrl) {
+			if (category.image) {
 				const imageElement = document.createElement("img");
-				imageElement.src = product.imageUrl;
+				imageElement.src = category.image;
 				imageElement.classList.add("preview-image");
 				imageElement.style.width = "100%";
 				imageElement.style.height = "100%";
 				imagePreview.appendChild(imageElement);
+
+				categoryImageInput.addEventListener("change", (e) => {
+					const file = e.target.files[0];
+					const reader = new FileReader();
+					reader.onload = (event) => {
+						const imageUrl = event.target.result;
+						const imageElement = document.createElement("img");
+						imageElement.src = imageUrl;
+						imageElement.classList.add("preview-image");
+						imageElement.style.width = "100%";
+						imageElement.style.height = "100%";
+						categoryImagePreview.innerHTML = "";
+						categoryImagePreview.appendChild(imageElement);
+					};
+					reader.readAsDataURL(file);
+				});
 			}
 
-			imageInput.addEventListener("change", (e) => {
-				const file = e.target.files[0];
-				const reader = new FileReader();
-				reader.onload = (event) => {
-					const imageUrl = event.target.result;
+			const categoryImagePreview = document.createElement("div");
+			categoryImagePreview.classList.add("image-preview");
+			categoryImagePreview.style.width = "3cm";
+			categoryImagePreview.style.height = "3cm";
+			categoryImagePreview.style.marginTop = "10px";
+			categoryImagePreview.style.marginBottom = "10px";
+
+
+			const addProductUnderCategoryButton = document.createElement("button");
+			addProductUnderCategoryButton.textContent = "+ Add Products";
+			addProductUnderCategoryButton.classList.add("btn", "btn-primary", "mt-1");
+			addProductUnderCategoryButton.addEventListener("click", (e) => {
+				e.preventDefault();
+				addProductUnderCategory(newCategoryDiv);
+				e.stopPropagation();
+			});
+
+			const deleteCategoryButton = document.createElement("button");
+			deleteCategoryButton.textContent = "Delete";
+			deleteCategoryButton.classList.add("btn", "btn-danger", "mt-1");
+			deleteCategoryButton.addEventListener("click", (e) => {
+				e.preventDefault();
+				deleteCategory(newCategoryDiv);
+				e.stopPropagation();
+			});
+			const categoryProductsDiv = document.createElement("div");
+			categoryProductsDiv.classList.add("category-products");
+
+			// Populate the products within the category
+			category.products.forEach((product) => {
+				const newProductDiv = document.createElement("div");
+				newProductDiv.classList.add("product");
+
+				const titleInput = document.createElement("input");
+				titleInput.type = "text";
+				titleInput.classList.add(
+					"form-control",
+					"border-2",
+					"border",
+					"border-primary"
+				);
+				titleInput.placeholder = "Product Title";
+				titleInput.value = product.title;
+
+				const PriceInput = document.createElement("input");
+				PriceInput.type = "text";
+				PriceInput.classList.add(
+					"form-control",
+					"border-2",
+					"border",
+					"border-primary"
+				);
+				PriceInput.placeholder = "Product Price";
+				PriceInput.value = product.Price;
+
+				const QuantityInput = document.createElement("input");
+				QuantityInput.type = "text";
+				QuantityInput.classList.add(
+					"form-control",
+					"border-2",
+					"border",
+					"border-primary"
+				);
+				QuantityInput.placeholder = "Product Quantity";
+				QuantityInput.value = product.Quantity;
+
+
+				const descriptionInput = document.createElement("input");
+				descriptionInput.type = "text";
+				descriptionInput.classList.add(
+					"form-control",
+					"border-2",
+					"border",
+					"border-primary"
+				);
+				descriptionInput.placeholder = "Product Description";
+				descriptionInput.value = product.description;
+
+				const imageInput = document.createElement("input");
+				imageInput.type = "file";
+				imageInput.classList.add(
+					"form-control",
+					"border-2",
+					"border",
+					"border-primary"
+				);
+				imageInput.style.marginTop = "10px";
+
+				const imagePreview = document.createElement("div");
+				imagePreview.classList.add("image-preview");
+				imagePreview.style.width = "3cm";
+				imagePreview.style.height = "3cm";
+				imagePreview.style.marginTop = "10px";
+				imageInput.style.display = "none";
+
+				const changeImageButton = document.createElement("button");
+				changeImageButton.textContent = "Change Image";
+				changeImageButton.classList.add("btn", "btn-primary", "mt-1");
+				changeImageButton.addEventListener("click", (e) => {
+					e.preventDefault();
+					imageInput.style.display = "block";
+					changeImageButton.style.display = "none";
+					e.stopPropagation();
+				});
+
+				if (product.imageUrl) {
 					const imageElement = document.createElement("img");
-					imageElement.src = imageUrl;
+					imageElement.src = product.imageUrl;
 					imageElement.classList.add("preview-image");
 					imageElement.style.width = "100%";
 					imageElement.style.height = "100%";
-					imagePreview.innerHTML = "";
 					imagePreview.appendChild(imageElement);
-				};
-				reader.readAsDataURL(file);
+				}
+
+				imageInput.addEventListener("change", (e) => {
+					const file = e.target.files[0];
+					const reader = new FileReader();
+					reader.onload = (event) => {
+						const imageUrl = event.target.result;
+						const imageElement = document.createElement("img");
+						imageElement.src = imageUrl;
+						imageElement.classList.add("preview-image");
+						imageElement.style.width = "100%";
+						imageElement.style.height = "100%";
+						imagePreview.innerHTML = "";
+						imagePreview.appendChild(imageElement);
+					};
+					reader.readAsDataURL(file);
+				});
+
+				const deleteButton = document.createElement("button");
+				deleteButton.textContent = "Delete";
+				deleteButton.classList.add(
+					"btn",
+					"btn-primary",
+					"delete-product",
+					"red-button"
+				);
+
+				deleteButton.addEventListener("click", () => {
+					deleteProduct(categoryProductsDiv, product.title);
+				});
+
+				newProductDiv.appendChild(document.createTextNode("Product Title: "));
+				newProductDiv.appendChild(titleInput);
+				newProductDiv.appendChild(document.createTextNode("Product Price: "));
+				newProductDiv.appendChild(PriceInput);
+				newProductDiv.appendChild(document.createTextNode("Product Quantity: "));
+				newProductDiv.appendChild(QuantityInput);
+				newProductDiv.appendChild(
+					document.createTextNode("Product Description: ")
+				);
+				newProductDiv.appendChild(descriptionInput);
+				newProductDiv.appendChild(document.createTextNode("Product Image: "));
+				newProductDiv.appendChild(imagePreview);
+				newProductDiv.appendChild(changeImageButton);
+				newProductDiv.appendChild(imageInput);
+				newProductDiv.appendChild(deleteButton);
+
+				categoryProductsDiv.appendChild(newProductDiv);
 			});
 
-			const deleteButton = document.createElement("button");
-			deleteButton.textContent = "Delete";
-			deleteButton.classList.add(
-				"btn",
-				"btn-primary",
-				"delete-product",
-				"red-button"
-			);
+			newCategoryDiv.appendChild(document.createTextNode("Category Name: "));
+			newCategoryDiv.appendChild(categoryNameInput);
+			newCategoryDiv.appendChild(document.createTextNode("Category Description: "));
+			newCategoryDiv.appendChild(categoryDescriptionInput);
+			newCategoryDiv.appendChild(document.createTextNode("Category Image "));
+			newCategoryDiv.appendChild(imagePreview);
+			newCategoryDiv.appendChild(addProductUnderCategoryButton);
+			newCategoryDiv.appendChild(deleteCategoryButton);
+			newCategoryDiv.appendChild(categoryImageInput);
+			newCategoryDiv.appendChild(categoryProductsDiv);
 
-			deleteButton.addEventListener("click", () => {
-				deleteProduct(categoryProductsDiv, product.title);
-			});
-
-			newProductDiv.appendChild(document.createTextNode("Product Title: "));
-			newProductDiv.appendChild(titleInput);
-			newProductDiv.appendChild(document.createTextNode("Product Price: "));
-			newProductDiv.appendChild(PriceInput);
-			newProductDiv.appendChild(document.createTextNode("Product Quantity: "));
-			newProductDiv.appendChild(QuantityInput);
-			newProductDiv.appendChild(
-				document.createTextNode("Product Description: ")
-			);
-			newProductDiv.appendChild(descriptionInput);
-			newProductDiv.appendChild(document.createTextNode("Product Image: "));
-			newProductDiv.appendChild(imagePreview);
-			newProductDiv.appendChild(changeImageButton);
-			newProductDiv.appendChild(imageInput);
-			newProductDiv.appendChild(deleteButton);
-
-			categoryProductsDiv.appendChild(newProductDiv);
-		});
-
-		newCategoryDiv.appendChild(document.createTextNode("Category Name: "));
-		newCategoryDiv.appendChild(categoryNameInput);
-		newCategoryDiv.appendChild(document.createTextNode("Category Description: "));
-		newCategoryDiv.appendChild(categoryDescriptionInput);
-		newCategoryDiv.appendChild(document.createTextNode("Category Image "));
-		newCategoryDiv.appendChild(imagePreview);
-		newCategoryDiv.appendChild(addProductUnderCategoryButton);
-		newCategoryDiv.appendChild(deleteCategoryButton);
-		newCategoryDiv.appendChild(categoryImageInput);
-		newCategoryDiv.appendChild(categoryProductsDiv);
-
-		categorySection.appendChild(newCategoryDiv);
-	}
+			categorySection.appendChild(newCategoryDiv);
+		}
 	});
 }
 
@@ -1156,22 +1154,22 @@ async function deleteCategoryFromFirestore(categoryName) {
 					categories: categoriesData,
 				});
 
-				console.log(
-					"Category deleted from Firestore successfully! Go to Home Page and Refresh to see the changes."
-				);
+				//console.log(
+				// 	"Category deleted from Firestore successfully! Go to Home Page and Refresh to see the changes."
+				// );
 				messageElement.textContent =
 					"Product Category Data Deleted successfully!";
 				messageElement.style.color = "green";
 				messageElement.style.display = "block";
 				window.scrollTo(0, 0);
 			} else {
-				console.log("Category not found in Firestore.");
+				//console.log("Category not found in Firestore.");
 			}
 		} else {
-			console.log("Document not found in Firestore.");
+			//console.log("Document not found in Firestore.");
 		}
 	} catch (error) {
-		console.error("Error deleting Category from Firestore: ", error);
+		//console.error("Error deleting Category from Firestore: ", error);
 	}
 }
 
@@ -1198,20 +1196,20 @@ const createCategory = () => {
 	errorMessageSpan.textContent = "Category Name cannot be empty";
 
 	const categoryImageInput = document.createElement("input");
-  categoryImageInput.type = "file";
-  categoryImageInput.classList.add("category-image-input");
-  categoryImageInput.style.marginTop = "10px";
+	categoryImageInput.type = "file";
+	categoryImageInput.classList.add("category-image-input");
+	categoryImageInput.style.marginTop = "10px";
 
-  const categoryDescriptionInput = document.createElement("input");
-  categoryDescriptionInput.type = "text";
-  categoryDescriptionInput.classList.add(
-    "form-control",
-    "border-2",
-    "border",
-    "border-primary"
-  );
-  categoryDescriptionInput.style.marginTop = "10px";
-  categoryDescriptionInput.placeholder = "Category Description";
+	const categoryDescriptionInput = document.createElement("input");
+	categoryDescriptionInput.type = "text";
+	categoryDescriptionInput.classList.add(
+		"form-control",
+		"border-2",
+		"border",
+		"border-primary"
+	);
+	categoryDescriptionInput.style.marginTop = "10px";
+	categoryDescriptionInput.placeholder = "Category Description";
 
 	categoryNameInput.appendChild(errorMessageSpan);
 
@@ -1236,15 +1234,15 @@ const createCategory = () => {
 	categoryProductsDiv.classList.add("category-products");
 
 	newCategoryDiv.appendChild(document.createTextNode("Category Name: "));
-	
+
 	newCategoryDiv.appendChild(categoryNameInput);
-  newCategoryDiv.appendChild(categoryDescriptionInput);
-  newCategoryDiv.appendChild(categoryImageInput);
+	newCategoryDiv.appendChild(categoryDescriptionInput);
+	newCategoryDiv.appendChild(categoryImageInput);
 	newCategoryDiv.appendChild(addProductUnderCategoryButton);
 	newCategoryDiv.appendChild(deleteCategoryButton);
 	newCategoryDiv.appendChild(categoryProductsDiv);
 
-	
+
 
 	categorySection.appendChild(newCategoryDiv);
 };
@@ -1377,7 +1375,7 @@ function populateFormFields() {
 			}
 		})
 		.catch((error) => {
-			console.error("Error retrieving data: ", error);
+			//console.error("Error retrieving data: ", error);
 		});
 	getDoc(productsAndServicesDocRef)
 		.then((docSnapshot) => {
@@ -1387,7 +1385,7 @@ function populateFormFields() {
 			}
 		})
 		.catch((error) => {
-			console.error("Error retrieving services data: ", error);
+			//console.error("Error retrieving services data: ", error);
 		});
 }
 
@@ -1424,10 +1422,10 @@ applyButton.addEventListener("click", async (event) => {
 			"Font Applied successfully, Go to Home Page and Refresh to see the changes.";
 		messageElement.style.color = "green";
 		messageElement.style.display = "block";
-		console.log("Font updated successfully in Firebase.");
+		//console.log("Font updated successfully in Firebase.");
 		window.scrollTo(0, 0);
 	} catch (error) {
-		console.error("Error updating font and preview in Firebase:", error);
+		//console.error("Error updating font and preview in Firebase:", error);
 	}
 });
 
@@ -1447,9 +1445,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 				document.getElementById("fontSize").value = fontSize;
 			}
 		} catch (error) {
-			console.error("Error getting font details from the database:", error);
+			//console.error("Error getting font details from the database:", error);
 		}
 	} catch (error) {
-		console.error("Error:", error);
+		//console.error("Error:", error);
 	}
 });

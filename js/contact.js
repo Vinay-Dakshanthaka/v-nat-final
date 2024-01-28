@@ -35,7 +35,7 @@ submitButton.addEventListener("click", async function (e) {
 	const subjectInput = document.getElementById("subject");
 	const commentsInput = document.getElementById("comments");
 	let isValid = false;
-	console.log(nameInput.value, emailInput.value);
+	// console.log(nameInput.value, emailInput.value);
 
 	if (nameInput.value.trim() === "") {
 		nameError.textContent = "Please enter your Name";
@@ -101,7 +101,7 @@ submitButton.addEventListener("click", async function (e) {
 	if (isValid) {
 		saveDataToFirebase();
 		const imageUrls = await saveImagesToFirebase(referenceImagesInput.files);
-		// console.log(imageUrls, nameInput.value, emailInput.value);
+		console.log(imageUrls, nameInput.value, emailInput.value);
 
 		emailjs.init("vb9KEKs3BpHBPC0_H");
 		const templateParams = {
@@ -115,7 +115,7 @@ submitButton.addEventListener("click", async function (e) {
 		emailjs
 			.send("service_reh310e", "template_0lqohuh", templateParams)
 			.then(function (response) {
-				console.log("Email sent:", response);
+				// console.log("Email sent:", response);
 				form.reset();
 				setTimeout(function () {
 					submissionMessage.textContent = "";
@@ -123,7 +123,7 @@ submitButton.addEventListener("click", async function (e) {
 				}, 3000);
 			})
 			.catch(function (error) {
-				console.error("Email sending failed:", error);
+				// console.error("Email sending failed:", error);
 			});
 	}
 });
@@ -141,7 +141,7 @@ function validateMobile(mobile) {
 async function saveImagesToFirebase(files) {
 	const imageUrls = [];
 	const filesArray = Array.from(files); // Convert FileList to an array
-	// console.log(filesArray.length);
+	console.log(filesArray.length);
 
 	for (const imageFile of filesArray) {
 		const uniqueId = Date.now(); // Use a timestamp as a unique identifier
@@ -150,11 +150,11 @@ async function saveImagesToFirebase(files) {
 
 		await uploadBytesResumable(storageRef, imageFile);
 		const imageUrl = await getDownloadURL(storageRef);
-		// console.log(imageUrl, storageRef);
+		console.log(imageUrl, storageRef);
 		imageUrls.push(imageUrl);
 	}
 
-	// console.log(imageUrls);
+	console.log(imageUrls);
 	return imageUrls;
 }
 
@@ -186,7 +186,7 @@ function saveDataToFirebase() {
 		})
 
 		.catch(function (error) {
-			console.error("Error adding document: ", error);
+			// console.error("Error adding document: ", error);
 		});
 }
 
@@ -196,7 +196,7 @@ if (contactData) {
 		contactData = JSON.parse(contactData);
 		showButtonsAndMaps(contactData);
 	} catch (error) {
-		console.log(error);
+		// console.log(error);
 	}
 }
 

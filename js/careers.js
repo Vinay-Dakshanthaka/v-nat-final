@@ -155,9 +155,9 @@ applicationForm.addEventListener("submit", async (e) => {
 			applicationModal.style.display = "none";
 		}, 3000);
 
-		console.log("Data saved successfully!");
+		// console.log("Data saved successfully!");
 	} catch (error) {
-		console.error("Error adding document: ", error);
+		// console.error("Error adding document: ", error);
 	}
 });
 

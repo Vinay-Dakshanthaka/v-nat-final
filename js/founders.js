@@ -95,7 +95,7 @@ function populateFoundersTable() {
 			teamContainer.appendChild(colElement);
 		});
 	} else {
-		console.log("No founders data present in session storage");
+		// console.log("No founders data present in session storage");
 	}
 }
 

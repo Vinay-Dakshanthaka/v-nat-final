@@ -50,7 +50,7 @@ function populateClientTable() {
 		const vendorSection = document.getElementById("vendorSection");
 		vendorSection.style.display = "block";
 	} else {
-		console.log("No data in session storage");
+		// console.log("No data in session storage");
 	}
 }
 

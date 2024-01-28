@@ -93,7 +93,7 @@ submitButton.addEventListener("click", async (e) => {
 			document.getElementById("message").innerText = "";
 		}, 3000);
 	} catch (error) {
-		console.error("Error adding document: ", error);
+		//console.error("Error adding document: ", error);
 	}
 });
 
@@ -190,7 +190,7 @@ updateButton.addEventListener("click", async () => {
 				document.getElementById("message").innerText = "";
 			}, 3000);
 		} catch (error) {
-			console.error("Error updating document: ", error);
+			//console.error("Error updating document: ", error);
 		}
 	}
 });
@@ -212,7 +212,7 @@ deleteButton.addEventListener("click", async () => {
 					document.getElementById("message").innerText = "";
 				}, 3000);
 			} catch (error) {
-				console.error("Error deleting document: ", error);
+				//console.error("Error deleting document: ", error);
 			}
 		}
 	}
@@ -259,10 +259,10 @@ async function fetchCareersData() {
 		const careersData = docSnap.data().jobs;
 		renderCareers(careersData);
 	} else {
-		console.log("No such document!");
+		//console.log("No such document!");
 	}
 }
 
 fetchCareersData().catch((error) => {
-	console.log("Error getting document:", error);
+	//console.log("Error getting document:", error);
 });

@@ -74,7 +74,7 @@ document
 				document.getElementById("message").textContent = "";
 			}, 2000);
 		} catch (error) {
-			console.error("Error uploading data to Firebase:", error);
+			//console.error("Error uploading data to Firebase:", error);
 			document.getElementById("message").textContent =
 				"An error occurred while uploading the founder.";
 		}
@@ -125,11 +125,11 @@ updateBtn.addEventListener("click", async (event) => {
 					await uploadTask;
 
 					picUrl = await getDownloadURL(storageRef);
-					console.log("Download URL:", picUrl);
+					//console.log("Download URL:", picUrl);
 					if (!picUrl) {
-						console.error("Download URL is null.");
+						//console.error("Download URL is null.");
 					} else {
-						console.log("Upload successful!");
+						//console.log("Upload successful!");
 					}
 				}
 
@@ -162,7 +162,7 @@ updateBtn.addEventListener("click", async (event) => {
 			}, 2000);
 		}
 	} catch (error) {
-		console.error("Error updating Firestore document:", error);
+		//console.error("Error updating Firestore document:", error);
 		updateMessageDiv.textContent = "";
 		messageDiv.textContent = "Error updating document. Please try again.";
 		setTimeout(function () {
@@ -260,7 +260,7 @@ deleteBtn.addEventListener("click", async (event) => {
             messageDiv.textContent = "No document found for the collection.";
         }
     } catch (error) {
-        console.error("Error deleting founder data:", error);
+        //console.error("Error deleting founder data:", error);
         messageDiv.textContent = "An error occurred while deleting the founder data. Please try again.";
     }
 });

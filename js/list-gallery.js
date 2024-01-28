@@ -70,7 +70,7 @@ function populateTable(searchTerm) {
 			}
 		})
 		.catch((error) => {
-			console.error("Error fetching images: ", error);
+			//console.error("Error fetching images: ", error);
 		});
 }
 function deleteImage(item) {
@@ -79,16 +79,16 @@ function deleteImage(item) {
 		const fileRef = ref(storage, item.fullPath);
 		deleteObject(fileRef)
 			.then(() => {
-				console.log("Item deleted successfully");
+				//console.log("Item deleted successfully");
 				showMessage("Item deleted successfully");
 				populateTable("");
 			})
 			.catch((error) => {
-				console.error("Error deleting image: ", error);
+				//console.error("Error deleting image: ", error);
 				showMessage("Error deleting image: " + error.message);
 			});
 	} catch (error) {
-		console.error("Error creating storage reference: ", error);
+		//console.error("Error creating storage reference: ", error);
 		showMessage("Error creating storage reference.");
 	}
 }

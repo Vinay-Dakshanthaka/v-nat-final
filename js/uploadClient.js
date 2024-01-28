@@ -98,11 +98,11 @@ document
 					var uploadTask = uploadBytesResumable(storageRef, pic);
 					await uploadTask;
 					picUrl = await getDownloadURL(storageRef);
-					console.log("Download URL:", picUrl);
+					//console.log("Download URL:", picUrl);
 					if (!picUrl) {
-						console.error("Download URL is null.");
+						//console.error("Download URL is null.");
 					} else {
-						console.log("Upload successful!");
+						//console.log("Upload successful!");
 					}
 				}
 
@@ -115,7 +115,7 @@ document
 						clients.push({ name, picUrl });
 						await updateDoc(clientDocRef, { clients });
 					} else {
-						console.log("Client already exists");
+						//console.log("Client already exists");
 					}
 				} else {
 					await setDoc(clientDocRef, { clients: [{ name, picUrl }] });
@@ -129,7 +129,7 @@ document
 					location.reload();
 				}, 5000);
 			} catch (error) {
-				console.error("Error uploading data to Firebase:", error);
+				//console.error("Error uploading data to Firebase:", error);
 				document.getElementById("message").textContent =
 					"An error occurred while uploading the client.";
 			}

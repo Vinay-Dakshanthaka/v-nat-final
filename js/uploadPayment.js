@@ -71,7 +71,7 @@ async function populateForm() {
 	const doc = await getDoc(contactAndPaymentsDocRef);
 	if (doc.exists()) {
 		const data = doc.data();
-        console.log("siva");
+        // console.log("siva");
 		document.getElementById("upiID").value = data.upiID || "";
 	}
 }

@@ -43,13 +43,13 @@ modalImage.src = '${url}';
                     document.getElementById("table-body").appendChild(row);
                 })
                 .catch(function (error) {
-                    console.error("Error getting download URL: ", error);
+                    //console.error("Error getting download URL: ", error);
                 });
         });
         i = 1;
     })
     .catch(function (error) {
-        console.error("Error fetching images: ", error);
+        //console.error("Error fetching images: ", error);
     });
 
 const totfdCollection = collection(firestore, "totfd");
@@ -91,7 +91,7 @@ async function updateFirestoreWithSelectedURL(imageName, index) {
             document.getElementById("message").textContent = "";
         }, 3000);
     } catch (error) {
-        console.error("Error updating Firestore:", error);
+        //console.error("Error updating Firestore:", error);
     }
 }
 // Add event listener to the update button1
@@ -129,7 +129,7 @@ async function updateFirestoreWithSelectedURL1(imageName) {
             document.getElementById("message").textContent = "";
         }, 3000);
     } catch (error) {
-        console.error("Error updating Firestore:", error);
+        //console.error("Error updating Firestore:", error);
     }
 }
 

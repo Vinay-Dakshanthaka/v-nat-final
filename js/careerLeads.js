@@ -85,7 +85,7 @@ function populateLeadsTable(leads) {
 
 		// Append the row to the table body
 		tbody.appendChild(row);
-		console.log(lead);
+		//console.log(lead);
 		leadCounter++;
 	});
 }
@@ -93,9 +93,9 @@ function populateLeadsTable(leads) {
 async function updateLeadStatus(leadRef, newStatus) {
 	try {
 		await updateDoc(leadRef, { status: newStatus });
-		console.log("Status updated successfully");
+		//console.log("Status updated successfully");
 	} catch (error) {
-		console.error("Error updating status:", error);
+		//console.error("Error updating status:", error);
 		throw error;
 	}
 }
@@ -114,7 +114,7 @@ async function readAllLeads() {
 		checkLeadsAndDisplay();
 		return leads;
 	} catch (error) {
-		console.error("Error fetching leads:", error);
+		//console.error("Error fetching leads:", error);
 		throw error;
 	}
 }
@@ -137,7 +137,7 @@ async function readNewLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching new leads:", error);
+		//console.error("Error fetching new leads:", error);
 	}
 }
 
@@ -158,7 +158,7 @@ async function readProcessingLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching new leads:", error);
+		//console.error("Error fetching new leads:", error);
 	}
 }
 
@@ -179,7 +179,7 @@ async function readAcceptedLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching Accepted leads:", error);
+		//console.error("Error fetching Accepted leads:", error);
 	}
 }
 
@@ -200,7 +200,7 @@ async function readRejectedLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching rejected leads:", error);
+		//console.error("Error fetching rejected leads:", error);
 	}
 }
 
@@ -221,7 +221,7 @@ async function readHiredLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching hired leads:", error);
+		//console.error("Error fetching hired leads:", error);
 	}
 }
 
@@ -255,7 +255,7 @@ async function readLeadsWithDesignation() {
 			return leadsData;
 		}
 	} catch (error) {
-		console.error("Error fetching leads by designation:", error);
+		//console.error("Error fetching leads by designation:", error);
 	}
 }
 
@@ -388,10 +388,10 @@ updateButton.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", async function () {
 	try {
 		await readAllLeads();
-		console.log("Leads fetched successfully.");
+		//console.log("Leads fetched successfully.");
 		checkLeadsAndDisplay();
 		updateTotalRecordsCount();
 	} catch (error) {
-		console.error("Error:", error);
+		//console.error("Error:", error);
 	}
 });

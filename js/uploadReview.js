@@ -41,11 +41,11 @@ document
 
 				await uploadTask;
 				picUrl = await getDownloadURL(storageRef);
-				console.log("Download URL:", picUrl);
+				// console.log("Download URL:", picUrl);
 				if (!picUrl) {
-					console.error("Download URL is null.");
+					// console.error("Download URL is null.");
 				} else {
-					console.log("Upload successful!");
+					// console.log("Upload successful!");
 				}
 			}
 			const docSnapshot = await getDoc(reviewDocRef);
@@ -64,7 +64,7 @@ document
 			document.getElementById("message").textContent =
 				"Review uploaded successfully!Go to Home Page and Refresh to see the changes.";
 		} catch (error) {
-			console.error("Error uploading data to Firebase:", error);
+			// console.error("Error uploading data to Firebase:", error);
 			document.getElementById("message").textContent =
 				"An error occurred while uploading the review.";
 		}
@@ -108,16 +108,16 @@ updateBtn.addEventListener("click", async (e) => {
 					await uploadTask;
 
 					picUrl = await getDownloadURL(storageRef);
-					console.log("Download URL:", picUrl);
+					// console.log("Download URL:", picUrl);
 					if (!picUrl) {
-						console.error("Download URL is null.");
+						// console.error("Download URL is null.");
 					} else {
-						console.log("Upload successful!");
+						// console.log("Upload successful!");
 					}
 
-					console.log(
-						"Upload successful!Go to Home Page and Refresh to see the changes."
-					);
+					// console.log(
+					// 	"Upload successful!Go to Home Page and Refresh to see the changes."
+					// );
 				}
 
 				const updatedReviews = reviews.map((review) => {
@@ -146,7 +146,7 @@ updateBtn.addEventListener("click", async (e) => {
 			messageDiv.textContent = "Document not found.";
 		}
 	} catch (error) {
-		console.error("Error updating Firestore document:", error);
+		// console.error("Error updating Firestore document:", error);
 		updateMessageDiv.textContent = "";
 		messageDiv.textContent = "Error updating document. Please try again.";
 	}
@@ -235,7 +235,7 @@ deleteBtn.addEventListener("click", async (event) => {
 			messageDiv.textContent = "No reviews found for the this Name.";
 		}
 	} catch (error) {
-		console.error("Error deleting review data:", error);
+		// console.error("Error deleting review data:", error);
 		messageDiv.textContent =
 			"An error occurred while deleting the review data. Please try again.";
 	}

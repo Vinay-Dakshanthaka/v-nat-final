@@ -53,13 +53,13 @@ listAll(folderRef)
 					document.getElementById("table-body").appendChild(row);
 				})
 				.catch(function (error) {
-					console.error("Error getting download URL: ", error);
+					// console.error("Error getting download URL: ", error);
 				});
 		});
 		num = 1;
 	})
 	.catch(function (error) {
-		console.error("Error fetching images: ", error);
+		// console.error("Error fetching images: ", error);
 	});
 
 const totfdCollection = collection(firestore, "totfd");
@@ -82,7 +82,7 @@ async function updateFirestoreWithSelectedURL(imageName) {
 			location.reload();
 		}, 3000);
 	} catch (error) {
-		console.error("Error updating Firestore:", error);
+		// console.error("Error updating Firestore:", error);
 	}
 }
 

@@ -47,7 +47,7 @@ if (paymentData && Object.keys(paymentData).length > 0) {
 		qrCodeElement.src = paymentData.imageUrl;
 	}
 } else {
-	console.log("No payment data found in session storage.");
+	// console.log("No payment data found in session storage.");
 }
 
 let counter = 1;
@@ -106,7 +106,7 @@ document
 
 			uploadBytes(storageRef, screenshot)
 				.then((snapshot) => {
-					console.log("Uploaded a blob or file!");
+					// console.log("Uploaded a blob or file!");
 					getDownloadURL(storageRef)
 						.then((url) => {
 							const totfd = collection(firestore, "totfd");
@@ -126,7 +126,7 @@ document
 								timestamp: timestamp,
 							})
 								.then((docRef) => {
-									console.log("Document written with ID: ", docRef.id);
+									// console.log("Document written with ID: ", docRef.id);
 									document.getElementById("paymentForm").reset();
 									modal.style.display = "none";
 									uploadMessage.textContent = "Upload successful!";
@@ -137,15 +137,15 @@ document
 									}, 2000);
 								})
 								.catch((error) => {
-									console.error("Error adding document: ", error);
+									// console.error("Error adding document: ", error);
 								});
 						})
 						.catch((error) => {
-							console.error("Error getting download URL: ", error);
+							// console.error("Error getting download URL: ", error);
 						});
 				})
 				.catch((error) => {
-					console.error("Error uploading file: ", error);
+					// console.error("Error uploading file: ", error);
 				});
 		}
 	});

@@ -161,7 +161,7 @@ function populateLeadsTable(leads) {
 
 		// Append the row to the table body
 		tbody.appendChild(row);
-		console.log(lead);
+		//console.log(lead);
 		leadCounter++;
 	});
 
@@ -182,9 +182,9 @@ function populateLeadsTable(leads) {
 // async function updateLeadStatus(leadRef, newStatus) {
 // 	try {
 // 		await updateDoc(leadRef, { status: newStatus });
-// 		console.log("Status updated successfully");
+// 		//console.log("Status updated successfully");
 // 	} catch (error) {
-// 		console.error("Error updating status:", error);
+// 		//console.error("Error updating status:", error);
 // 		throw error;
 // 	}
 // }
@@ -196,9 +196,9 @@ async function updateLeadStatus(leadRef, newStatus, newAmount) {
 		};
 
 		await updateDoc(leadRef, updatedData);
-		console.log("Status and amount updated successfully");
+		//console.log("Status and amount updated successfully");
 	} catch (error) {
-		console.error("Error updating status and amount:", error);
+		//console.error("Error updating status and amount:", error);
 		throw error;
 	}
 }
@@ -227,7 +227,7 @@ async function readAllLeads() {
 		checkLeadsAndDisplay();
 		return leads;
 	} catch (error) {
-		console.error("Error fetching leads:", error);
+		//console.error("Error fetching leads:", error);
 		throw error;
 	}
 }
@@ -247,7 +247,7 @@ async function readNewLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching new leads:", error);
+		//console.error("Error fetching new leads:", error);
 	}
 }
 
@@ -269,7 +269,7 @@ async function readAcceptedLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching processing leads:", error);
+		//console.error("Error fetching processing leads:", error);
 	}
 }
 
@@ -290,7 +290,7 @@ async function readRejectedLeads() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching rejected leads:", error);
+		//console.error("Error fetching rejected leads:", error);
 	}
 }
 
@@ -306,7 +306,7 @@ async function readLeadsInDateRange() {
 
 		// Add 1 day to toDate to include leads on the end date
 		toDate.setDate(toDate.getDate() + 1);
-		console.log(fromDate);
+		//console.log(fromDate);
 
 		const leadsQuery = query(
 			leadsCollection,
@@ -324,7 +324,7 @@ async function readLeadsInDateRange() {
 		updateTotalRecordsCount();
 		return leadsData;
 	} catch (error) {
-		console.error("Error fetching leads in date range:", error);
+		//console.error("Error fetching leads in date range:", error);
 	}
 }
 
@@ -452,10 +452,10 @@ updateButton.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", async function () {
 	try {
 		await readAllLeads();
-		console.log("Leads fetched successfully.");
+		//console.log("Leads fetched successfully.");
 		checkLeadsAndDisplay();
 		updateTotalRecordsCount();
 	} catch (error) {
-		console.error("Error:", error);
+		//console.error("Error:", error);
 	}
 });

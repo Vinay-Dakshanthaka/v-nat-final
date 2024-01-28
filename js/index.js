@@ -54,7 +54,7 @@ function getHomePageDataFromFirestoreAndSave() {
                     } else {
                         aboutUsImage.style.display = "none";
                     }
-                    console.log("Homepage data found in session storage");
+                    //console.log("Homepage data found in session storage");
 
                     document.getElementById("logoimage").src = homepageData.logoimageurl;
                     document.getElementById("footerlogoimage").src = homepageData.footerlogoimageurl;
@@ -108,7 +108,7 @@ function getHomePageDataFromFirestoreAndSave() {
                             document.getElementById("homePageImage").src = commonImageUrl;
                             document.getElementById("homePageImage2").src = commonImageUrl;
                         } else {
-                            console.log("No background image to set");
+                            //console.log("No background image to set");
                         }
                     }
                     const aboutUsCaption = document.getElementById("aboutUsCaption");
@@ -125,14 +125,14 @@ function getHomePageDataFromFirestoreAndSave() {
 
                         const pointElement = document.createElement("h5");
                         pointElement.className = "mb-3";
-                        //console.log(pointElement);
+                        ////console.log(pointElement);
                         addIconToElement(pointElement)
                             .then((message) => {
-                                //console.log(message);
-                                //console.log(pointElement); // Check if the icon is present in the pointElement
+                                ////console.log(message);
+                                ////console.log(pointElement); // Check if the icon is present in the pointElement
                             })
                             .catch((error) => {
-                                console.error(error);
+                                //console.error(error);
                             });
                         pointElement.textContent = point;
                         col.appendChild(pointElement);
@@ -144,7 +144,7 @@ function getHomePageDataFromFirestoreAndSave() {
                         for (let i = 1; i <= 4; i++) {
                             document.getElementById(`whyUsTitle${i}`).innerHTML =
                                 homepageData[`whyUsTitle${i}`];
-                            console.log(homepageData[`whyUsTitle${i}`]);
+                            //console.log(homepageData[`whyUsTitle${i}`]);
                             document.getElementById(`whyUsDescription${i}`).innerHTML =
                                 homepageData[`whyUsDescription${i}`];
                         }
@@ -155,15 +155,15 @@ function getHomePageDataFromFirestoreAndSave() {
                     sessionStorage.setItem("homepageData", JSON.stringify(homepageData));
                 }
 
-                console.log(homepageData);
+                //console.log(homepageData);
 
 
             } else {
-                console.log("Homepage document does not exist.");
+                //console.log("Homepage document does not exist.");
             }
         })
         .catch((error) => {
-            console.error("Error fetching Homepage document:", error);
+            //console.error("Error fetching Homepage document:", error);
         });
 }
 
@@ -199,7 +199,7 @@ async function servicesAndProducts() {
                     JSON.stringify(productsAndServicesData)
                 );
 
-                //console.log(homePageData);
+                ////console.log(homePageData);
                 const servicesLink = document.getElementById("services");
                 servicesLink.style.display = "block";
                 const servicesLink2 = document.getElementById("services2");
@@ -285,7 +285,7 @@ async function servicesAndProducts() {
         if (homePageData && homePageData.showProductSection) {
             const docSnapshot = await getDoc(productsAndServicesDocRef);
             const productsAndServicesData = docSnapshot.data();
-            console.log(productsAndServicesData);
+            //console.log(productsAndServicesData);
 
             if (
                 docSnapshot.exists &&
@@ -361,7 +361,7 @@ async function servicesAndProducts() {
             // productContainer.appendChild(productCard);
         };
     } catch (error) {
-        console.log("Error checking for service data:", error);
+        //console.log("Error checking for service data:", error);
     }
 }
 function displaySocialIcons(data) {
@@ -470,7 +470,7 @@ function getDataFromFirestoreAndSave() {
                 }
 
                 if (data && data.imageUrl) {
-                    //console.log(data.imageUrl);
+                    ////console.log(data.imageUrl);
                     const paymentsLink = document.getElementById("payments");
                     paymentsLink.style.display = "block";
                     const paymentsLink2 = document.getElementById("payments2");
@@ -479,7 +479,7 @@ function getDataFromFirestoreAndSave() {
             }
         })
         .catch((error) => {
-            console.error("Error getting document:", error);
+            //console.error("Error getting document:", error);
         });
 
     getDoc(careersDocRef)
@@ -487,7 +487,7 @@ function getDataFromFirestoreAndSave() {
             if (docSnapshot.exists()) {
                 const data = docSnapshot.data();
                 const careersData = data.jobs || [];
-                //console.log(data);
+                ////console.log(data);
                 const displayedCareers = careersData.filter(
                     (career) => career.displayed === true
                 );
@@ -506,7 +506,7 @@ function getDataFromFirestoreAndSave() {
             }
         })
         .catch((error) => {
-            console.log("Error checking for careers:", error);
+            //console.log("Error checking for careers:", error);
         });
 
     const storageRef = ref(storage, "totfd/gallery-images");
@@ -525,14 +525,14 @@ function getDataFromFirestoreAndSave() {
             }
         })
         .catch((error) => {
-            console.log("Error checking for files:", error);
+            //console.log("Error checking for files:", error);
             0;
         });
-    console.log("session storage loaded");
+    //console.log("session storage loaded");
 }
 
 const sessionStorageSize = JSON.stringify(sessionStorage).length;
-console.log("Session storage size:", sessionStorageSize, "bytes");
+//console.log("Session storage size:", sessionStorageSize, "bytes");
 
 document.addEventListener("DOMContentLoaded", function () {
     const testimonialCarousel = document.querySelector(".testimonial-carousel");
@@ -544,16 +544,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const clientsDocRef = doc(totfdCollection, "Clients");
 
-    //console.log("Fetching document...");
+    ////console.log("Fetching document...");
     getDoc(reviewDocRef)
         .then((docSnapshot) => {
-            //console.log("Document snapshot received:", docSnapshot);
+            ////console.log("Document snapshot received:", docSnapshot);
             if (docSnapshot.exists) {
                 const data = docSnapshot.data();
                 const reviewsData = data.reviews || [];
 
                 if (Array.isArray(reviewsData) && reviewsData.length > 0) {
-                    //console.log("Reviews data found:", reviewsData);
+                    ////console.log("Reviews data found:", reviewsData);
                     moreLink.style.display = "block";
                     reviewsLink.style.display = "block";
                     reviewsLink2.style.display = "block";
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         `;
                         testimonialItem.innerHTML = innerContent;
                         testimonialCarousel.appendChild(testimonialItem);
-                        console.log("Added testimonial:", review.name);
+                        //console.log("Added testimonial:", review.name);
                     });
 
                     $(testimonialCarousel).owlCarousel({
@@ -602,14 +602,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
 
                     sessionStorage.setItem("reviewsData", JSON.stringify(reviewsData));
-                    console.log("Reviews data stored in sessionStorage.");
+                    //console.log("Reviews data stored in sessionStorage.");
                 }
             } else {
-                console.log("Document does not exist.");
+                //console.log("Document does not exist.");
             }
         })
         .catch((error) => {
-            console.log("Error checking for reviews:", error);
+            //console.log("Error checking for reviews:", error);
         });
 
     const teamContainer = document.getElementById("teamContainer");
@@ -720,7 +720,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch((error) => {
-            console.log("Error checking for founders:", error);
+            //console.log("Error checking for founders:", error);
         });
 
     getDoc(clientsDocRef)
@@ -728,7 +728,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (docSnapshot.exists()) {
                 const data = docSnapshot.data();
                 const clientsData = data.clients || [];
-                console.log(data.clients);
+                //console.log(data.clients);
                 if (Array.isArray(clientsData) && clientsData.length > 0) {
                     const clientsLink = document.getElementById("clients");
                     clientsLink.style.display = "block";
@@ -747,7 +747,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch((error) => {
-            console.error("Error checking for clients:", error);
+            //console.error("Error checking for clients:", error);
         });
 });
 
@@ -799,7 +799,7 @@ function populateProductCategoryTable() {
                     owlCarousel.trigger("play.owl.autoplay");
                 }
             } else {
-                console.log("No data in Firestore");
+                //console.log("No data in Firestore");
             }
         }
     });
@@ -911,7 +911,7 @@ function createCategoryContainer(category, index) {
 //                 categories.forEach((category) => {
 //                     const categoryContainer = document.createElement("div");
 //                     //categoryContainer.classList.add("testimonial-item", "bg-light");
-//                     console.log(category.image)
+//                     //console.log(category.image)
 
 
 //                     const innerContent = `
@@ -973,7 +973,7 @@ function createCategoryContainer(category, index) {
 //                     },
 //                 });
 //             } else {
-//                 console.log("No data in session storage");
+//                 //console.log("No data in session storage");
 //             }
 
 
@@ -1069,7 +1069,7 @@ document
 
             addDoc(leadsCollection, formData)
                 .then((docRef) => {
-                    console.log("Document written with ID: ", docRef.id);
+                    //console.log("Document written with ID: ", docRef.id);
                     successMessage.style.display = "block";
                     document.getElementById("serviceForm").reset();
                     setTimeout(() => {
@@ -1077,7 +1077,7 @@ document
                     }, 3000);
                 })
                 .catch((error) => {
-                    console.error("Error adding document: ", error);
+                    //console.error("Error adding document: ", error);
                 });
             const referenceImage = document.getElementById("referenceImageInput");
             var imageUrls = "";
@@ -1096,10 +1096,10 @@ document
             emailjs
                 .send("service_reh310e", "template_0lqohuh", templateParams)
                 .then(function (response) {
-                    console.log("Email sent:", response);
+                    //console.log("Email sent:", response);
                 })
                 .catch(function (error) {
-                    console.error("Email sending failed:", error);
+                    //console.error("Email sending failed:", error);
                 });
         }
     });
@@ -1107,7 +1107,7 @@ document
 async function saveImagesToFirebase(files) {
     const imageUrls = [];
     const filesArray = Array.from(files); // Convert FileList to an array
-    // console.log(filesArray.length);
+    // //console.log(filesArray.length);
 
     for (const imageFile of filesArray) {
         const uniqueId = Date.now(); // Use a timestamp as a unique identifier
@@ -1116,11 +1116,11 @@ async function saveImagesToFirebase(files) {
 
         await uploadBytesResumable(storageRef, imageFile);
         const imageUrl = await getDownloadURL(storageRef);
-        // console.log(imageUrl, storageRef);
+        // //console.log(imageUrl, storageRef);
         imageUrls.push(imageUrl);
     }
 
-    // console.log(imageUrls);
+    // //console.log(imageUrls);
     return imageUrls;
 }
 
@@ -1164,7 +1164,7 @@ function validateMobile(mobile) {
 //   const productContainer = document.getElementById("productContainer");
 
 //   if (!productsData || !productsData.categories) {
-//     console.log("No product data available.");
+//     //console.log("No product data available.");
 //     return;
 //   }
 
@@ -1192,9 +1192,9 @@ function validateMobile(mobile) {
 // }
 
 // async function populateProductsContainer(productsData) {
-//  console.log(productsData);
+//  //console.log(productsData);
 //  if (!productsData || !productsData.categories) {
-//      console.log("No product data available.");
+//      //console.log("No product data available.");
 //      return;
 //  }
 
@@ -1278,7 +1278,7 @@ function validateMobile(mobile) {
 //      categoryItem.addEventListener("click", () => {
 //          const categoryData = getCategoryDataByName(productsData, category.name);
 //          populateProductsContainer(categoryData);
-//          console.log(categoryData);
+//          //console.log(categoryData);
 //      });
 //      categoryContainer.appendChild(categoryItem);
 //  });
@@ -1290,7 +1290,7 @@ function validateMobile(mobile) {
 //  );
 
 //  if (filteredCategories.length === 0) {
-//      console.log(`No category found with the name ${categoryName}.`);
+//      //console.log(`No category found with the name ${categoryName}.`);
 //      return null;
 //  }
 
@@ -1320,10 +1320,10 @@ async function displayVideoOnHomepage() {
             displayVideo(videoUrl1, 'videoPlayer1');
             displayVideo(videoUrl2, 'videoPlayer2');
         } else {
-            console.log("Homepage document does not exist.");
+            //console.log("Homepage document does not exist.");
         }
     } catch (error) {
-        console.error("Error fetching video URLs from Firestore:", error);
+        //console.error("Error fetching video URLs from Firestore:", error);
     }
 }
 

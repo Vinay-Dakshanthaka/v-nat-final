@@ -6,7 +6,7 @@ function populateReviewsTable() {
 	const reviewsData = JSON.parse(sessionStorage.getItem("reviewsData"));
 
 	if (Array.isArray(reviewsData) && reviewsData.length > 0) {
-		console.log("Reviews data found:", reviewsData);
+		// console.log("Reviews data found:", reviewsData);
 
 		reviewsData.forEach((review) => {
 			const testimonialItem = document.createElement("div");
@@ -25,7 +25,7 @@ function populateReviewsTable() {
             `;
 			testimonialItem.innerHTML = innerContent;
 			testimonialCarousel.appendChild(testimonialItem);
-			console.log("Added testimonial:", review.name);
+			// console.log("Added testimonial:", review.name);
 		});
 
 		$(testimonialCarousel).owlCarousel({
@@ -51,7 +51,7 @@ function populateReviewsTable() {
 		});
 
 		sessionStorage.setItem("reviewsData", JSON.stringify(reviewsData));
-		console.log("Reviews data stored in sessionStorage.");
+		// console.log("Reviews data stored in sessionStorage.");
 	}
 }
 
