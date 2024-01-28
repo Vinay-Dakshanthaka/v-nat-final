@@ -215,7 +215,7 @@ function displaySocialIcons(data) {
 			const facebookIcon = createSocialIcon(
 				"facebook",
 				data.facebook,
-				"fab fa-facebook-f"
+				"./img/Facebook_Logo.png"
 			);
 			connectWithUsBanner.appendChild(facebookIcon);
 		}
@@ -223,7 +223,7 @@ function displaySocialIcons(data) {
 			const instagramIcon = createSocialIcon(
 				"instagram",
 				data.instagram,
-				"fab fa-instagram"
+				"./img/instagram-logo.jpg"
 			);
 			connectWithUsBanner.appendChild(instagramIcon);
 		}
@@ -231,7 +231,7 @@ function displaySocialIcons(data) {
 			const youtubeIcon = createSocialIcon(
 				"youtube",
 				data.youtube,
-				"fab fa-youtube"
+				"./img/Youtube_logo.png"
 			);
 			connectWithUsBanner.appendChild(youtubeIcon);
 		}
@@ -239,21 +239,26 @@ function displaySocialIcons(data) {
 			const twitterIcon = createSocialIcon(
 				"twitter",
 				data.twitter,
-				"fab fa-twitter"
+				"./img/twitterlogo.webp"
 			);
 			connectWithUsBanner.appendChild(twitterIcon);
 		}
 	}
 }
-function createSocialIcon(platform, url, iconClass) {
-	const icon = document.createElement("a");
-	icon.className = "btn btn-primary btn-square me-2";
-	icon.href = url;
-	icon.target = "_blank";
-	const iconImage = document.createElement("i");
-	iconImage.className = iconClass + " fw-normal";
-	icon.appendChild(iconImage);
-	return icon;
+function createSocialIcon(platform, url,imgSrc) {
+    const icon = document.createElement("a");
+    icon.className = " btn btn-square btn me-2";
+    icon.href = url;
+    icon.target = "_blank";
+    const iconImage = document.createElement("img");
+    iconImage.src = imgSrc;
+    iconImage.style.width="30px";
+    iconImage.style.height = "30px";
+    iconImage.style.borderRadius="8px"
+    iconImage.style.objectFit="contain"
+    // iconImage.className = imgSrc + " fw-normal";
+    icon.appendChild(iconImage);
+    return icon;
 }
 
 const data = JSON.parse(sessionStorage.getItem("contactAndPaymentData"));

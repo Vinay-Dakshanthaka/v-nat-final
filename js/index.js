@@ -380,7 +380,7 @@ function displaySocialIcons(data) {
             const facebookIcon = createSocialIcon(
                 "facebook",
                 data.facebook,
-                "https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
+                "./img/Facebook_Logo.png"
             );
             connectWithUsBanner.appendChild(facebookIcon);
         }
@@ -388,7 +388,7 @@ function displaySocialIcons(data) {
             const instagramIcon = createSocialIcon(
                 "instagram",
                 data.instagram,
-                "https://e0.pxfuel.com/wallpapers/16/46/desktop-wallpaper-hq-instagram-png-transparent-instagram-png-instagram-logo.jpg"
+                "./img/instagram-logo.jpg"
             );
             connectWithUsBanner.appendChild(instagramIcon);
         }
@@ -396,7 +396,7 @@ function displaySocialIcons(data) {
             const youtubeIcon = createSocialIcon(
                 "youtube",
                 data.youtube,
-                "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+                "./img/Youtube_logo.png"
             );
             connectWithUsBanner.appendChild(youtubeIcon);
         }
@@ -404,7 +404,7 @@ function displaySocialIcons(data) {
             const twitterIcon = createSocialIcon(
                 "twitter",
                 data.twitter,
-                "https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.1448711260.1706140800&semt=ais"
+                "./img/twitterlogo.webp"
             );
             connectWithUsBanner.appendChild(twitterIcon);
         }
@@ -412,7 +412,7 @@ function displaySocialIcons(data) {
 }
 function createSocialIcon(platform, url,imgSrc) {
     const icon = document.createElement("a");
-    icon.className = "btn me-2";
+    icon.className = " btn btn-square btn me-2";
     icon.href = url;
     icon.target = "_blank";
     const iconImage = document.createElement("img");
