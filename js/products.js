@@ -177,7 +177,7 @@ function populateCategories(productsData) {
 	});
 	categoryContainer.appendChild(allProductsItem);
 	const categoryId = window.location.hash.slice(1);
-	console.log("url id",categoryId)
+	// console.log("url id",categoryId)
 	productsData.categories.forEach((category) => {
 		const categoryItem = document.createElement("button");
 		categoryItem.classList.add("btn", "btn-secondary", "btn-sm", "m-2");
