@@ -176,18 +176,31 @@ function populateCategories(productsData) {
 		populateProductsContainer(productsData);
 	});
 	categoryContainer.appendChild(allProductsItem);
-
+	const categoryId = window.location.hash.slice(1);
+	console.log("url id",categoryId)
 	productsData.categories.forEach((category) => {
 		const categoryItem = document.createElement("button");
 		categoryItem.classList.add("btn", "btn-secondary", "btn-sm", "m-2");
 		categoryItem.textContent = category.name;
+		let categoryName = category.name;
+		categoryItem.id = categoryName.replace(/\s/g, '').trim()
+		let buttonId = categoryItem.id
+		// console.log(buttonId)
 		categoryItem.addEventListener("click", () => {
 			const categoryData = getCategoryDataByName(productsData, category.name);
 			populateProductsContainer(categoryData);
 			// console.log(categoryData);
 		});
 		categoryContainer.appendChild(categoryItem);
+		if (buttonId === categoryId) {
+            // Schedule the click event for the next tick using setTimeout
+            setTimeout(() => {
+                categoryItem.click();
+            }, 0);
+        }
+
 	});
+
 }
 
 function getCategoryDataByName(productsData, categoryName) {
