@@ -196,6 +196,7 @@ function populateCategories(productsData) {
             // Schedule the click event for the next tick using setTimeout
             setTimeout(() => {
                 categoryItem.click();
+				window.scrollTo(0, 200);
             }, 0);
         }
 
