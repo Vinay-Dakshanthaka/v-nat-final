@@ -196,8 +196,9 @@ function populateCategories(productsData) {
             // Schedule the click event for the next tick using setTimeout
             setTimeout(() => {
                 categoryItem.click();
+				let captionId = document.getElementById('ourProductsCaption')
 				window.scrollTo({
-					top: document.getElementById('ourProductsCaption').offsetTop+180,
+					top: captionId.offsetTop+100,
 					behavior: 'smooth' 
 				});
             }, 0);
