@@ -197,7 +197,7 @@ function populateCategories(productsData) {
             setTimeout(() => {
                 categoryItem.click();
 				window.scrollTo({
-					top: document.getElementById('ourProductsCaption').offsetTop+200,
+					top: document.getElementById('ourProductsCaption').offsetTop+180,
 					behavior: 'smooth' 
 				});
             }, 0);
